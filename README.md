@@ -15,7 +15,7 @@
 
 ## 🚀 Featured Projects
 
-- **SARQUERY AI** — Intelligent natural-language platform for satellite imagery analysis (Optical + SAR) and bi-temporal change detection.
+- **SATQUERY AI** — Intelligent natural-language platform for satellite imagery analysis (Optical + SAR) and bi-temporal change detection.
 - **JARVIS-AML** — Graph-based AML financial crime investigation system with Money Trail DNA fingerprinting *(Top 50 Finalist at KPRIET Ignitron 2026)*.
 - **Semiconductor Inspection Restoration** — U-Net image restoration for grayscale defect analysis.
 - **Log Anomaly Explainer** — RAG & vector-driven observability platform using Gemini AI.

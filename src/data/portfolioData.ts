@@ -35,10 +35,10 @@ export const QUICK_STATS = [
 
 export const PROJECTS: Project[] = [
   {
-    id: 'sarquery-ai',
+    id: 'satquery-ai',
     number: '01',
-    title: 'SARQUERY AI',
-    displayName: 'SARQUERY AI',
+    title: 'SATQUERY AI',
+    displayName: 'SATQUERY AI',
     tagline: 'Satellite Imagery Intelligence & Multi-Sensor Change Detection',
     description: 'An intelligent natural-language platform for analyzing satellite imagery using dynamic task selection, optical and SAR analysis, building and water detection, spatial analysis, and bi-temporal change detection, with evidence-grounded AI responses.',
     category: 'AI / ML',
