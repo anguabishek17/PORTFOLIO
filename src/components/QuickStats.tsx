@@ -21,13 +21,13 @@ export const QuickStats: React.FC = () => {
       const easeOut = 1 - Math.pow(1 - progress, 3);
 
       setCgpa(Number((8.51 * easeOut).toFixed(2)));
-      setGradYear(Math.floor(2024 + (2029 - 2024) * easeOut));
+      setGradYear(Math.floor(2024 + (2028 - 2024) * easeOut));
 
       if (progress < 1) {
         requestAnimationFrame(animateCounters);
       } else {
         setCgpa(8.51);
-        setGradYear(2029);
+        setGradYear(2028);
       }
     };
 
@@ -59,7 +59,7 @@ export const QuickStats: React.FC = () => {
             <span className="text-xs text-[#59635E] font-medium">Academic Standing</span>
           </motion.div>
 
-          {/* 2029 Expected Graduation */}
+          {/* 2028 Expected Graduation */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -72,7 +72,7 @@ export const QuickStats: React.FC = () => {
             </div>
             <div className="flex items-baseline gap-1">
               <span className="font-sans font-extrabold text-3xl sm:text-4xl lg:text-5xl text-[#123C32] tracking-tight">
-                {isInView ? gradYear : '2029'}
+                {isInView ? gradYear : '2028'}
               </span>
             </div>
             <span className="text-xs font-bold text-[#17201D] mt-2">GRADUATION</span>

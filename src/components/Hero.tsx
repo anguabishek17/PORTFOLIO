@@ -204,7 +204,7 @@ export const Hero: React.FC = () => {
                     {PERSONAL_INFO.name}
                   </p>
                   <p className="text-xs font-medium text-[#59635E]">
-                    B.E. ECE · CGPA 8.51 · Class of 2029
+                    B.E. ECE · CGPA 8.51 · Class of 2028
                   </p>
                 </div>
               </div>

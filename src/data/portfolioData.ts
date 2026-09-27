@@ -28,7 +28,7 @@ export const PERSONAL_INFO = {
 
 export const QUICK_STATS = [
   { label: 'CGPA', value: '8.51', numeric: 8.51, suffix: '', decimals: 2, subtext: 'Academic Excellence' },
-  { label: 'Expected Graduation', value: '2029', numeric: 2029, suffix: '', decimals: 0, subtext: 'B.E. ECE' },
+  { label: 'Expected Graduation', value: '2028', numeric: 2028, suffix: '', decimals: 0, subtext: 'B.E. ECE' },
   { label: 'Current Year', value: 'III', numeric: 3, isRoman: true, suffix: ' Year', subtext: 'Undergraduate' },
   { label: 'Backlogs', value: 'NO', numeric: 0, textDisplay: '0', subtext: 'Clean Academic Record' },
 ];
@@ -262,7 +262,7 @@ export const EDUCATION_DATA: EducationInfo = {
   degree: 'Bachelor of Engineering (B.E.)',
   major: 'Electronics & Communication Engineering',
   year: 'III Year',
-  expectedGraduation: '2029',
+  expectedGraduation: '2028',
   cgpa: '8.51',
   academicStatus: 'No Backlogs (100% Clear Standing)',
   location: 'Karur, Tamil Nadu, India',
