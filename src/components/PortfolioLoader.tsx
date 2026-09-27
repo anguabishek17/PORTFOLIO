@@ -130,19 +130,6 @@ export const PortfolioLoader: React.FC<PortfolioLoaderProps> = memo(({ onLoading
         }}
       />
 
-      {/* Top Header Telemetry */}
-      <div className="absolute top-6 sm:top-8 left-6 sm:left-8 right-6 sm:right-8 flex items-center justify-between font-mono text-[11px] text-zinc-500 border-b border-zinc-900/80 pb-3">
-        <div className="flex items-center gap-2">
-          <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-          <span className="text-zinc-300 font-semibold tracking-widest uppercase text-[10px] sm:text-[11px]">
-            ANGU_SYS // INITIALIZATION
-          </span>
-        </div>
-        <div className="hidden sm:block text-zinc-600 tracking-wider">
-          CHROMATIC: {isColor ? 'RGB_ACTIVE' : 'MONO_PASS'} · V2.6
-        </div>
-      </div>
-
       {/* Center Cinematic Portrait & HUD Cluster */}
       <div className="relative flex flex-col items-center justify-center px-6 max-w-lg w-full">
         
