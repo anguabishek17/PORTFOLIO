@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { AnimatePresence } from 'framer-motion';
+import { PortfolioLoader } from './components/PortfolioLoader';
 import { CustomCursor } from './components/CustomCursor';
 import { TechGridBackground } from './components/TechGridBackground';
 import { Navbar } from './components/Navbar';
@@ -17,8 +19,17 @@ import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
 
 export const App: React.FC = () => {
+  const [isLoading, setIsLoading] = useState(true);
+
   return (
     <div className="min-h-screen bg-black text-white relative selection:bg-white selection:text-black">
+      {/* Cinematic AI Engineering Boot Loader */}
+      <AnimatePresence mode="wait">
+        {isLoading && (
+          <PortfolioLoader onLoadingComplete={() => setIsLoading(false)} />
+        )}
+      </AnimatePresence>
+
       {/* Interactive Custom Cursor for Desktop */}
       <CustomCursor />
 
