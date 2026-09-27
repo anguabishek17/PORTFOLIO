@@ -1,32 +1,56 @@
-# React + TypeScript + Vite
+# ANGU ABISHEK M — Personal Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+> **AI Developer | Full Stack Developer | ECE Engineer | Embedded Enthusiast**  
+> Personal engineering & AI portfolio built with React, Vite, TypeScript, and Tailwind CSS.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## ⚡ Tech Stack
 
-## React Compiler
+- **Frontend:** React 19, TypeScript, Tailwind CSS v4, Framer Motion
+- **Tooling:** Vite, Lucide Icons
+- **Design:** Futuristic AI + Engineering Dark Aesthetic
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the Oxlint configuration
+## 🚀 Featured Projects
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+- **SARQUERY AI** — Intelligent natural-language platform for satellite imagery analysis (Optical + SAR) and bi-temporal change detection.
+- **JARVIS-AML** — Graph-based AML financial crime investigation system with Money Trail DNA fingerprinting *(Top 50 Finalist at KPRIET Ignitron 2026)*.
+- **Semiconductor Inspection Restoration** — U-Net image restoration for grayscale defect analysis.
+- **Log Anomaly Explainer** — RAG & vector-driven observability platform using Gemini AI.
+- **MAITRI** — Multimodal astronaut psychological and operational wellness monitoring system.
+- **UNOMINDA SOP Platform** — Digital Standard Operating Procedure management platform deployed at UNOMINDA Plant 2.
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+---
+
+## 📜 Published Research / Patent
+
+- **Patent:** *An Intelligent Natural-Language Platform for Evidence-Grounded Multi-Temporal and Multi-Sensor Satellite Image Analysis* (2026)
+
+---
+
+## 💻 Getting Started Locally
+
+```bash
+# 1. Clone the repository
+git clone https://github.com/anguabishek17/PORTFOLIO.git
+
+# 2. Navigate to directory
+cd PORTFOLIO
+
+# 3. Install dependencies
+npm install
+
+# 4. Start the development server
+npm run dev
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+---
+
+## 📬 Connect
+
+- **Email:** [anguabishek183@gmail.com](mailto:anguabishek183@gmail.com)
+- **LinkedIn:** [linkedin.com/in/angu-abishek-m-00748a311](https://www.linkedin.com/in/angu-abishek-m-00748a311)
+- **GitHub:** [@anguabishek17](https://github.com/anguabishek17)
+- **Location:** Hosur, Tamil Nadu, India
