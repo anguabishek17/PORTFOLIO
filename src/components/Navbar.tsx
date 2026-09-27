@@ -12,6 +12,7 @@ const NAV_LINKS = [
   { name: 'Experience', href: '#experience' },
   { name: 'Achievements', href: '#achievements' },
   { name: 'Contact', href: '#contact' },
+  { name: 'Resume', href: '/ANGU_ABISHEK_RESUME.pdf', isExternal: true },
 ];
 
 export const Navbar: React.FC = () => {
@@ -40,10 +41,14 @@ export const Navbar: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, link: { name: string; href: string; isExternal?: boolean }) => {
+    if (link.isExternal) {
+      setMobileMenuOpen(false);
+      return;
+    }
     e.preventDefault();
     setMobileMenuOpen(false);
-    const target = document.querySelector(href);
+    const target = document.querySelector(link.href);
     if (target) {
       target.scrollIntoView({ behavior: 'smooth' });
     }
@@ -62,7 +67,7 @@ export const Navbar: React.FC = () => {
           {/* Brand Monogram */}
           <a
             href="#home"
-            onClick={(e) => handleNavClick(e, '#home')}
+            onClick={(e) => handleNavClick(e, { name: 'Home', href: '#home' })}
             className="group flex items-center gap-2.5 focus:outline-none"
           >
             <div className="relative flex items-center justify-center w-9 h-9 rounded-lg bg-zinc-900 border border-zinc-700/80 group-hover:border-white transition-all duration-300">
@@ -89,7 +94,10 @@ export const Navbar: React.FC = () => {
                 <a
                   key={link.name}
                   href={link.href}
-                  onClick={(e) => handleNavClick(e, link.href)}
+                  target={link.isExternal ? '_blank' : undefined}
+                  rel={link.isExternal ? 'noopener noreferrer' : undefined}
+                  download={link.isExternal ? 'ANGU_ABISHEK_RESUME.pdf' : undefined}
+                  onClick={(e) => handleNavClick(e, link)}
                   className={`relative px-3.5 py-1.5 rounded-full text-xs font-medium tracking-wide transition-all duration-200 ${
                     isActive
                       ? 'text-white'
@@ -132,7 +140,7 @@ export const Navbar: React.FC = () => {
 
             <a
               href="#contact"
-              onClick={(e) => handleNavClick(e, '#contact')}
+              onClick={(e) => handleNavClick(e, { name: 'Contact', href: '#contact' })}
               className="hidden md:flex items-center gap-1.5 text-xs font-mono font-medium px-4 py-2 rounded-lg bg-white text-black hover:bg-zinc-200 transition-all shadow-sm"
             >
               <span>CONNECT</span>
@@ -174,10 +182,13 @@ export const Navbar: React.FC = () => {
                     <motion.a
                       key={link.name}
                       href={link.href}
+                      target={link.isExternal ? '_blank' : undefined}
+                      rel={link.isExternal ? 'noopener noreferrer' : undefined}
+                      download={link.isExternal ? 'ANGU_ABISHEK_RESUME.pdf' : undefined}
                       initial={{ opacity: 0, x: -20 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: idx * 0.05 + 0.1 }}
-                      onClick={(e) => handleNavClick(e, link.href)}
+                      onClick={(e) => handleNavClick(e, link)}
                       className={`text-2xl font-bold py-2.5 flex items-center justify-between border-b border-zinc-900 ${
                         isActive ? 'text-white' : 'text-zinc-500 hover:text-zinc-200'
                       }`}

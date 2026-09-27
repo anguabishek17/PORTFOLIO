@@ -83,6 +83,17 @@ export const Contact: React.FC = () => {
             </a>
 
             <a
+              href={PERSONAL_INFO.resumeUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              download="ANGU_ABISHEK_RESUME.pdf"
+              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-lg bg-zinc-900 border border-zinc-700/80 hover:border-white text-white font-mono font-medium text-xs tracking-wider uppercase transition-all hover:bg-zinc-800 shadow-sm"
+            >
+              <ArrowUpRight size={14} className="text-zinc-400" />
+              <span>DOWNLOAD RESUME</span>
+            </a>
+
+            <a
               href={PERSONAL_INFO.github}
               target="_blank"
               rel="noopener noreferrer"
