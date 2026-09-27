@@ -11,7 +11,7 @@ export const Experience: React.FC = () => {
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 pb-6 border-b border-[#DDE1DC] gap-4">
           <div>
-            <div className="flex items-center gap-2 font-mono text-xs text-[#174C3C] mb-2 uppercase tracking-widest font-semibold">
+            <div className="flex items-center gap-2 text-xs text-[#174C3C] mb-2 uppercase tracking-wider font-semibold">
               <span className="w-1.5 h-1.5 rounded-full bg-[#174C3C]" />
               <span>05 // INDUSTRY TRAJECTORY</span>
             </div>
@@ -19,7 +19,7 @@ export const Experience: React.FC = () => {
               INDUSTRIAL EXPERIENCE
             </h2>
           </div>
-          <p className="font-mono text-xs text-[#59635E] max-w-sm">
+          <p className="text-xs text-[#59635E] font-medium max-w-sm">
             MANUFACTURING WORKFLOWS & EMBEDDED MAINTENANCE EXPOSURE.
           </p>
         </div>
@@ -46,7 +46,7 @@ export const Experience: React.FC = () => {
                 {/* Header Info */}
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-[#DDE1DC]">
                   <div>
-                    <div className="flex items-center gap-2 text-[#5F806F] text-xs font-mono mb-1 font-semibold">
+                    <div className="flex items-center gap-2 text-[#5F806F] text-xs mb-1 font-semibold">
                       <Building2 size={13} className="text-[#174C3C]" />
                       <span className="text-[#123C32]">{exp.company}</span>
                       {exp.division && (
@@ -56,17 +56,17 @@ export const Experience: React.FC = () => {
                         </>
                       )}
                     </div>
-                    <h3 className="font-sans font-extrabold text-xl sm:text-2xl text-[#17201D] tracking-tight">
+                    <h3 className="font-sans font-bold text-xl sm:text-2xl text-[#17201D] tracking-tight">
                       {exp.position}
                     </h3>
                   </div>
 
-                  <div className="flex sm:flex-col sm:items-end gap-2 font-mono text-xs text-[#59635E]">
+                  <div className="flex sm:flex-col sm:items-end gap-2 text-xs text-[#59635E]">
                     <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded bg-[#DCE8E1] border border-[#174C3C]/20 text-[#123C32] font-semibold">
                       <Calendar size={12} className="text-[#174C3C]" />
                       {exp.period}
                     </span>
-                    <span className="text-[11px] text-[#8A938E]">
+                    <span className="text-xs text-[#8A938E] font-medium">
                       Duration: {exp.duration}
                     </span>
                   </div>
@@ -79,7 +79,7 @@ export const Experience: React.FC = () => {
 
                 {/* Key Responsibilities */}
                 <div className="space-y-2 pt-2">
-                  <div className="font-mono text-xs text-[#174C3C] uppercase tracking-wider font-semibold">
+                  <div className="text-xs text-[#174C3C] uppercase tracking-wider font-bold">
                     Core Industrial Contributions:
                   </div>
                   <ul className="space-y-2">
@@ -96,7 +96,7 @@ export const Experience: React.FC = () => {
                 {exp.project && (
                   <div className="mt-4 p-5 rounded-xl bg-[#F6F5F0] border border-[#DDE1DC] space-y-3">
                     <div className="flex items-center justify-between">
-                      <span className="font-mono text-xs font-bold text-[#123C32] tracking-wider flex items-center gap-1.5">
+                      <span className="text-xs font-bold text-[#123C32] tracking-wider flex items-center gap-1.5">
                         <Terminal size={14} className="text-[#174C3C]" />
                         DEPLOYED ENTERPRISE APPLICATION: {exp.project.name}
                       </span>
@@ -105,7 +105,7 @@ export const Experience: React.FC = () => {
                           href={exp.project.liveUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center gap-1.5 px-3 py-1 rounded bg-[#174C3C] hover:bg-[#123C32] text-white font-mono text-xs font-bold transition-colors shadow-sm"
+                          className="inline-flex items-center gap-1.5 px-3 py-1 rounded bg-[#174C3C] hover:bg-[#123C32] text-white text-xs font-semibold transition-colors shadow-sm"
                         >
                           <span>VIEW PROJECT</span>
                           <ArrowUpRight size={13} />

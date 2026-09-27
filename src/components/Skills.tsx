@@ -30,7 +30,7 @@ export const Skills: React.FC = () => {
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 pb-6 border-b border-[#DDE1DC] gap-4">
           <div>
-            <div className="flex items-center gap-2 font-mono text-xs text-[#174C3C] mb-2 uppercase tracking-widest font-semibold">
+            <div className="flex items-center gap-2 text-xs text-[#174C3C] mb-2 uppercase tracking-wider font-semibold">
               <span className="w-1.5 h-1.5 rounded-full bg-[#174C3C]" />
               <span>02 // ARCHITECTURE & TOOLING</span>
             </div>
@@ -38,7 +38,7 @@ export const Skills: React.FC = () => {
               TECHNICAL STACK
             </h2>
           </div>
-          <p className="font-mono text-xs text-[#59635E] max-w-xs">
+          <p className="text-xs text-[#59635E] font-medium max-w-xs">
             CURATED TECHNOLOGIES FOR HIGH-PERFORMANCE AI & EMBEDDED COMPUTING.
           </p>
         </div>
@@ -47,9 +47,9 @@ export const Skills: React.FC = () => {
         <div className="flex flex-wrap items-center gap-2 mb-12">
           <button
             onClick={() => setActiveCategory('ALL')}
-            className={`px-3.5 py-1.5 rounded-lg font-mono text-xs font-medium transition-all ${
+            className={`px-3.5 py-1.5 rounded-lg text-xs font-semibold transition-all ${
               activeCategory === 'ALL'
-                ? 'bg-[#174C3C] text-white font-bold shadow-sm'
+                ? 'bg-[#174C3C] text-white shadow-sm'
                 : 'bg-white text-[#59635E] hover:text-[#174C3C] border border-[#DDE1DC]'
             }`}
           >
@@ -59,9 +59,9 @@ export const Skills: React.FC = () => {
             <button
               key={cat.title}
               onClick={() => setActiveCategory(cat.title)}
-              className={`px-3.5 py-1.5 rounded-lg font-mono text-xs font-medium transition-all ${
+              className={`px-3.5 py-1.5 rounded-lg text-xs font-semibold transition-all ${
                 activeCategory === cat.title
-                  ? 'bg-[#174C3C] text-white font-bold shadow-sm'
+                  ? 'bg-[#174C3C] text-white shadow-sm'
                   : 'bg-white text-[#59635E] hover:text-[#174C3C] border border-[#DDE1DC]'
               }`}
             >
@@ -90,11 +90,11 @@ export const Skills: React.FC = () => {
                       <div className="p-2 rounded-lg bg-[#F6F5F0] border border-[#DDE1DC] text-[#174C3C] group-hover:bg-[#DCE8E1] transition-colors">
                         <Icon size={16} />
                       </div>
-                      <h3 className="font-mono text-xs font-bold tracking-wider text-[#123C32]">
+                      <h3 className="text-xs font-bold tracking-wider text-[#123C32] uppercase">
                         {category.title}
                       </h3>
                     </div>
-                    <span className="font-mono text-[10px] text-[#8A938E]">
+                    <span className="text-[10px] font-semibold text-[#8A938E]">
                       {category.skills.length} MODULES
                     </span>
                   </div>
@@ -108,7 +108,7 @@ export const Skills: React.FC = () => {
                     {category.skills.map((skill) => (
                       <div
                         key={skill.name}
-                        className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-mono transition-all ${
+                        className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium transition-all ${
                           skill.highlight
                             ? 'bg-[#ECEBE5] border border-[#DDE1DC] text-[#174C3C] font-semibold hover:border-[#174C3C]'
                             : 'bg-[#F6F5F0] border border-[#DDE1DC]/80 text-[#59635E]'
@@ -121,7 +121,7 @@ export const Skills: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="mt-6 pt-4 border-t border-[#DDE1DC] flex items-center justify-between font-mono text-[10px] text-[#8A938E]">
+                <div className="mt-6 pt-4 border-t border-[#DDE1DC] flex items-center justify-between text-xs text-[#8A938E] font-medium">
                   <span>PRODUCTION READY</span>
                   <ChevronRight size={12} className="group-hover:translate-x-1 transition-transform text-[#174C3C]" />
                 </div>
@@ -136,13 +136,13 @@ export const Skills: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="mt-12 p-5 rounded-xl bg-white border border-[#DDE1DC] flex flex-col sm:flex-row items-center justify-between gap-4 font-mono text-xs shadow-sm"
+          className="mt-12 p-5 rounded-xl bg-white border border-[#DDE1DC] flex flex-col sm:flex-row items-center justify-between gap-4 text-xs shadow-sm font-medium"
         >
           <div className="flex items-center gap-3 text-[#123C32]">
             <Sparkles size={16} className="text-[#174C3C] shrink-0" />
             <span>CORE PHILOSOPHY: Zero fake metrics. Built on verified code, rigorous math, and reproducible architectures.</span>
           </div>
-          <div className="text-[#59635E] text-[11px] shrink-0 font-semibold">
+          <div className="text-[#59635E] text-xs shrink-0 font-bold">
             ENGINEERING &gt; BUZZWORDS
           </div>
         </motion.div>

@@ -14,7 +14,7 @@ export const GitHubShowcase: React.FC = () => {
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 pb-6 border-b border-[#DDE1DC] gap-4">
           <div>
-            <div className="flex items-center gap-2 font-mono text-xs text-[#174C3C] mb-2 uppercase tracking-widest font-semibold">
+            <div className="flex items-center gap-2 text-xs text-[#174C3C] mb-2 uppercase tracking-wider font-semibold">
               <span className="w-1.5 h-1.5 rounded-full bg-[#174C3C]" />
               <span>09 // OPEN SOURCE ARCHITECTURE</span>
             </div>
@@ -26,7 +26,7 @@ export const GitHubShowcase: React.FC = () => {
             href={PERSONAL_INFO.github}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-[#174C3C] hover:bg-[#123C32] text-xs font-mono font-medium text-white shadow-sm transition-all self-start md:self-auto active:scale-95"
+            className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-[#174C3C] hover:bg-[#123C32] text-xs font-semibold text-white shadow-sm transition-all self-start md:self-auto active:scale-95"
           >
             <GithubIcon size={15} />
             <span>@anguabishek17 on GitHub</span>
@@ -50,7 +50,7 @@ export const GitHubShowcase: React.FC = () => {
             >
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-2 font-mono text-xs text-[#59635E]">
+                  <div className="flex items-center gap-2 text-xs text-[#59635E]">
                     <Code2 size={15} className="text-[#174C3C] group-hover:text-[#123C32] transition-colors" />
                     <span className="font-bold text-[#17201D] group-hover:text-[#174C3C] transition-colors">
                       {repo.title}
@@ -59,17 +59,17 @@ export const GitHubShowcase: React.FC = () => {
                   <ExternalLink size={13} className="text-[#8A938E] group-hover:text-[#174C3C] transition-colors" />
                 </div>
 
-                <p className="text-xs text-[#59635E] line-clamp-3 leading-relaxed font-sans">
+                <p className="text-xs text-[#59635E] line-clamp-3 leading-relaxed font-sans font-normal">
                   {repo.description}
                 </p>
               </div>
 
-              <div className="mt-6 pt-4 border-t border-[#ECEBE5] flex items-center justify-between font-mono text-[11px] text-[#59635E]">
+              <div className="mt-6 pt-4 border-t border-[#ECEBE5] flex items-center justify-between text-xs text-[#59635E]">
                 <div className="flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-[#174C3C]" />
-                  <span className="font-medium text-[#17201D]">{repo.technologies[0] || 'Python'}</span>
+                  <span className="font-semibold text-[#17201D]">{repo.technologies[0] || 'Python'}</span>
                 </div>
-                <span className="text-[#8A938E]">Public Repository</span>
+                <span className="text-[#8A938E] font-medium">Public Repository</span>
               </div>
             </motion.a>
           ))}

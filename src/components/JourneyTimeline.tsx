@@ -11,7 +11,7 @@ export const JourneyTimeline: React.FC = () => {
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 pb-6 border-b border-[#DDE1DC] gap-4">
           <div>
-            <div className="flex items-center gap-2 font-mono text-xs text-[#174C3C] mb-2 uppercase tracking-widest font-semibold">
+            <div className="flex items-center gap-2 text-xs text-[#174C3C] mb-2 uppercase tracking-wider font-semibold">
               <span className="w-1.5 h-1.5 rounded-full bg-[#174C3C]" />
               <span>07 // EVOLUTION & MILESTONES</span>
             </div>
@@ -19,7 +19,7 @@ export const JourneyTimeline: React.FC = () => {
               MY JOURNEY
             </h2>
           </div>
-          <p className="font-mono text-xs text-[#59635E] max-w-sm">
+          <p className="text-xs text-[#59635E] font-medium max-w-sm">
             CHRONOLOGICAL ACCELERATION FROM CLASSROOM TO PATENTS & HACKATHONS.
           </p>
         </div>
@@ -38,10 +38,10 @@ export const JourneyTimeline: React.FC = () => {
               >
                 <div>
                   <div className="flex items-center justify-between pb-3 mb-3 border-b border-[#DDE1DC]">
-                    <span className="font-mono text-sm font-black text-[#174C3C] px-2.5 py-0.5 rounded bg-[#DCE8E1]/60 border border-[#DDE1DC]">
+                    <span className="text-xs font-bold text-[#174C3C] px-2.5 py-0.5 rounded bg-[#DCE8E1]/60 border border-[#DDE1DC]">
                       {event.year} {event.month ? `· ${event.month}` : ''}
                     </span>
-                    <span className="font-mono text-[10px] text-[#5F806F] uppercase font-semibold">
+                    <span className="text-[10px] text-[#5F806F] uppercase font-bold tracking-wider">
                       {event.type}
                     </span>
                   </div>
@@ -51,19 +51,19 @@ export const JourneyTimeline: React.FC = () => {
                   </h3>
 
                   {event.subtitle && (
-                    <p className="font-mono text-xs text-[#5F806F] mb-3 font-medium">
+                    <p className="text-xs text-[#5F806F] mb-3 font-semibold">
                       {event.subtitle}
                     </p>
                   )}
 
                   {event.description && (
-                    <p className="text-xs text-[#59635E] leading-relaxed font-sans">
+                    <p className="text-xs text-[#59635E] leading-relaxed font-sans font-normal">
                       {event.description}
                     </p>
                   )}
                 </div>
 
-                <div className="mt-6 pt-3 border-t border-[#ECEBE5] flex items-center justify-between font-mono text-[10px] text-[#8A938E]">
+                <div className="mt-6 pt-3 border-t border-[#ECEBE5] flex items-center justify-between text-xs text-[#8A938E] font-medium">
                   <span>STEP 0{idx + 1}</span>
                   <ChevronRight size={13} className="text-[#5F806F] group-hover:text-[#174C3C] group-hover:translate-x-1 transition-all" />
                 </div>

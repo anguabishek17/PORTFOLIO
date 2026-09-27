@@ -283,12 +283,12 @@ export const PortfolioLoader: React.FC<PortfolioLoaderProps> = ({ onLoadingCompl
           className="mt-8 text-center space-y-1.5"
         >
           <h1
-            className="font-sans font-black text-xl sm:text-2xl tracking-tight text-white uppercase transition-opacity duration-500"
+            className="font-sans font-extrabold text-xl sm:text-2xl tracking-tight text-white uppercase transition-opacity duration-500"
             style={{ opacity: colorState.isColor ? 1 : 0.8 }}
           >
             {PERSONAL_INFO.name}
           </h1>
-          <p className="font-mono text-xs sm:text-sm text-zinc-400 font-medium tracking-wide">
+          <p className="font-sans text-xs sm:text-sm text-zinc-300 font-semibold tracking-wide">
             AI DEVELOPER · ECE ENGINEER
           </p>
         </motion.div>

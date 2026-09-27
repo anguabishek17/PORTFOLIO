@@ -11,7 +11,7 @@ export const Achievements: React.FC = () => {
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 pb-6 border-b border-[#DDE1DC] gap-4">
           <div>
-            <div className="flex items-center gap-2 font-mono text-xs text-[#174C3C] mb-2 uppercase tracking-widest font-semibold">
+            <div className="flex items-center gap-2 text-xs text-[#174C3C] mb-2 uppercase tracking-wider font-semibold">
               <span className="w-1.5 h-1.5 rounded-full bg-[#174C3C]" />
               <span>08 // HONORS & RECOGNITIONS</span>
             </div>
@@ -19,7 +19,7 @@ export const Achievements: React.FC = () => {
               ACHIEVEMENTS
             </h2>
           </div>
-          <p className="font-mono text-xs text-[#59635E] max-w-sm">
+          <p className="text-xs text-[#59635E] font-medium max-w-sm">
             VALIDATED COMPETITIVE ENGINEERING & INTELLECTUAL MILESTONES.
           </p>
         </div>
@@ -54,26 +54,26 @@ export const Achievements: React.FC = () => {
                           <Trophy size={18} />
                         </div>
                       )}
-                      <span className={`font-mono text-xs font-bold ${isPatent ? 'text-[#DCE8E1]' : 'text-[#5F806F]'}`}>
+                      <span className={`text-xs font-bold ${isPatent ? 'text-[#DCE8E1]' : 'text-[#5F806F]'}`}>
                         {item.category}
                       </span>
                     </div>
-                    <span className={`font-mono text-xs px-2 py-0.5 rounded border ${
+                    <span className={`text-xs px-2 py-0.5 rounded border font-semibold ${
                       isPatent
                         ? 'bg-[#174C3C] border-[#5F806F] text-white'
-                        : 'bg-white border-[#DDE1DC] text-[#174C3C] font-semibold'
+                        : 'bg-white border-[#DDE1DC] text-[#174C3C]'
                     }`}>
                       {item.year}
                     </span>
                   </div>
 
-                  <h3 className={`font-sans font-black text-xl sm:text-2xl tracking-tight leading-snug ${
+                  <h3 className={`font-sans font-bold text-xl sm:text-2xl tracking-tight leading-snug ${
                     isPatent ? 'text-white' : 'text-[#17201D]'
                   }`}>
                     {item.title}
                   </h3>
 
-                  <p className={`font-mono text-xs font-medium ${
+                  <p className={`text-xs font-semibold ${
                     isPatent ? 'text-[#DCE8E1]' : 'text-[#174C3C]'
                   }`}>
                     {item.summary}
@@ -88,7 +88,7 @@ export const Achievements: React.FC = () => {
                   )}
                 </div>
 
-                <div className={`mt-8 pt-4 border-t flex items-center justify-between text-[11px] font-mono ${
+                <div className={`mt-8 pt-4 border-t flex items-center justify-between text-xs ${
                   isPatent ? 'border-[#174C3C] text-[#DCE8E1]' : 'border-[#DDE1DC] text-[#59635E]'
                 }`}>
                   <span className="flex items-center gap-1.5 font-medium">

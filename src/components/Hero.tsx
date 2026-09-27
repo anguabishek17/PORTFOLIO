@@ -44,14 +44,14 @@ export const Hero: React.FC = () => {
           transition={{ duration: 0.6, ease: 'easeOut' }}
           className="flex flex-wrap items-center gap-3 mb-6"
         >
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-[#DDE1DC] font-mono text-[11px] text-[#174C3C] tracking-wider shadow-sm">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-[#DDE1DC] text-xs text-[#174C3C] tracking-wide shadow-sm">
             <span className="w-2 h-2 rounded-full bg-[#174C3C] animate-ping" />
-            <span className="font-semibold text-[#123C32]">ACTIVE</span>
+            <span className="font-bold text-[#123C32]">ACTIVE</span>
             <span className="text-[#8A938E]">|</span>
-            <span className="text-[#59635E]">{PERSONAL_INFO.eyebrow}</span>
+            <span className="text-[#59635E] font-medium">{PERSONAL_INFO.eyebrow}</span>
           </div>
 
-          <div className="hidden sm:inline-flex items-center gap-1.5 font-mono text-[11px] text-[#59635E] px-3 py-1 rounded-full bg-white/70 border border-[#DDE1DC]">
+          <div className="hidden sm:inline-flex items-center gap-1.5 text-xs font-medium text-[#59635E] px-3 py-1 rounded-full bg-white/70 border border-[#DDE1DC]">
             <Activity size={12} className="text-[#174C3C]" />
             <span>HOSUR IST {timeString || '12:00:00'} (UTC+5:30)</span>
           </div>
@@ -69,7 +69,7 @@ export const Hero: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
             >
-              <h1 className="font-sans font-black tracking-tight text-[#17201D] leading-[0.95] select-none text-[clamp(2.8rem,7vw,6.5rem)]">
+              <h1 className="font-sans font-extrabold tracking-tight text-[#17201D] leading-[0.95] select-none text-[clamp(2.8rem,7vw,6.5rem)]">
                 ANGU <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#17201D] via-[#174C3C] to-[#5F806F]">
                   ABISHEK M
@@ -82,7 +82,7 @@ export const Hero: React.FC = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.2 }}
-              className="flex items-center gap-2 font-mono text-sm sm:text-base text-[#174C3C] font-semibold"
+              className="flex items-center gap-2 text-sm sm:text-base text-[#174C3C] font-semibold"
             >
               <Terminal size={16} className="text-[#174C3C] shrink-0" />
               <p className="tracking-tight">
@@ -105,7 +105,7 @@ export const Hero: React.FC = () => {
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.35 }}
-              className="flex items-center gap-2 text-xs font-mono text-[#59635E]"
+              className="flex items-center gap-2 text-xs font-medium text-[#59635E]"
             >
               <MapPin size={14} className="text-[#174C3C]" />
               <span>{PERSONAL_INFO.location}</span>
@@ -133,7 +133,7 @@ export const Hero: React.FC = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 download="ANGU_ABISHEK_RESUME.pdf"
-                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-lg bg-transparent border border-[#174C3C] hover:bg-[#DCE8E1]/60 text-[#174C3C] font-medium text-xs tracking-wider uppercase transition-all duration-300 shadow-sm"
+                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-lg bg-transparent border border-[#174C3C] hover:bg-[#DCE8E1]/60 text-[#174C3C] font-semibold text-xs tracking-wider uppercase transition-all duration-300 shadow-sm"
               >
                 <FileText size={14} className="text-[#174C3C]" />
                 <span>DOWNLOAD RESUME</span>
@@ -144,7 +144,7 @@ export const Hero: React.FC = () => {
                 href={PERSONAL_INFO.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-3.5 rounded-lg text-xs font-mono text-[#59635E] hover:text-[#174C3C] transition-colors"
+                className="inline-flex items-center gap-2 px-4 py-3.5 rounded-lg text-xs font-semibold text-[#59635E] hover:text-[#174C3C] transition-colors"
               >
                 <GithubIcon size={15} />
                 <span>GitHub →</span>
@@ -165,11 +165,11 @@ export const Hero: React.FC = () => {
               <div className="flex items-center justify-between border-b border-[#DDE1DC] pb-4">
                 <div className="flex items-center gap-2">
                   <div className="w-2.5 h-2.5 rounded-sm bg-[#174C3C] animate-pulse" />
-                  <span className="font-mono text-xs font-bold text-[#123C32] tracking-widest">
+                  <span className="text-xs font-bold text-[#123C32] tracking-wider">
                     SYS_PROFILE // ANGU
                   </span>
                 </div>
-                <span className="font-mono text-[10px] text-[#5F806F]">
+                <span className="text-[10px] font-semibold text-[#5F806F]">
                   ID: 2026-ECE-AI
                 </span>
               </div>
@@ -200,27 +200,27 @@ export const Hero: React.FC = () => {
 
                 {/* Subtitle Matrix */}
                 <div className="mt-5 text-center space-y-1">
-                  <p className="font-mono text-sm font-bold text-[#123C32] tracking-wider uppercase">
+                  <p className="text-sm font-bold text-[#123C32] tracking-wide uppercase">
                     {PERSONAL_INFO.name}
                   </p>
-                  <p className="font-mono text-xs text-[#59635E]">
+                  <p className="text-xs font-medium text-[#59635E]">
                     B.E. ECE · CGPA 8.51 · Class of 2029
                   </p>
                 </div>
               </div>
 
               {/* Bottom Real-time Metric Badges */}
-              <div className="border-t border-[#DDE1DC] pt-4 grid grid-cols-3 gap-2 text-center font-mono">
+              <div className="border-t border-[#DDE1DC] pt-4 grid grid-cols-3 gap-2 text-center">
                 <div className="p-2 rounded bg-[#ECEBE5]/60 border border-[#DDE1DC]">
-                  <span className="text-[10px] text-[#59635E] block">SPECIALTY</span>
+                  <span className="text-[10px] text-[#59635E] block font-medium">SPECIALTY</span>
                   <span className="text-xs font-bold text-[#174C3C]">AI + ECE</span>
                 </div>
                 <div className="p-2 rounded bg-[#ECEBE5]/60 border border-[#DDE1DC]">
-                  <span className="text-[10px] text-[#59635E] block">PATENT</span>
+                  <span className="text-[10px] text-[#59635E] block font-medium">PATENT</span>
                   <span className="text-xs font-bold text-[#123C32]">PUBLISHED</span>
                 </div>
                 <div className="p-2 rounded bg-[#ECEBE5]/60 border border-[#DDE1DC]">
-                  <span className="text-[10px] text-[#59635E] block">HACKATHON</span>
+                  <span className="text-[10px] text-[#59635E] block font-medium">HACKATHON</span>
                   <span className="text-xs font-bold text-[#174C3C]">TOP 50</span>
                 </div>
               </div>
@@ -235,7 +235,7 @@ export const Hero: React.FC = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.8, duration: 1 }}
-          className="mt-16 sm:mt-24 flex items-center justify-between pt-6 border-t border-[#DDE1DC] text-[#59635E] font-mono text-xs"
+          className="mt-16 sm:mt-24 flex items-center justify-between pt-6 border-t border-[#DDE1DC] text-[#59635E] text-xs font-medium"
         >
           <div className="flex items-center gap-2">
             <span className="w-1.5 h-1.5 rounded-full bg-[#174C3C]" />
@@ -244,7 +244,7 @@ export const Hero: React.FC = () => {
 
           <button
             onClick={() => handleScrollTo('about')}
-            className="flex items-center gap-1.5 text-[#59635E] hover:text-[#174C3C] transition-colors"
+            className="flex items-center gap-1.5 text-[#59635E] hover:text-[#174C3C] transition-colors font-semibold"
           >
             <span>DISCOVER</span>
             <ArrowDown size={14} className="animate-bounce text-[#174C3C]" />

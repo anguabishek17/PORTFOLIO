@@ -35,7 +35,7 @@ export const Projects: React.FC = () => {
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 pb-6 border-b border-[#DDE1DC] gap-4">
           <div>
-            <div className="flex items-center gap-2 font-mono text-xs text-[#174C3C] mb-2 uppercase tracking-widest font-semibold">
+            <div className="flex items-center gap-2 text-xs text-[#174C3C] mb-2 uppercase tracking-wider font-semibold">
               <span className="w-1.5 h-1.5 rounded-full bg-[#174C3C]" />
               <span>03 // SELECTED WORK</span>
             </div>
@@ -43,7 +43,7 @@ export const Projects: React.FC = () => {
               SELECTED WORK
             </h2>
           </div>
-          <p className="font-mono text-xs text-[#59635E] max-w-sm">
+          <p className="text-xs text-[#59635E] font-medium max-w-sm">
             ENGINEERING INTELLIGENT SYSTEMS FOR REAL-WORLD PROBLEMS.
           </p>
         </div>
@@ -54,9 +54,9 @@ export const Projects: React.FC = () => {
             <button
               key={cat}
               onClick={() => setSelectedCategory(cat)}
-              className={`px-3.5 py-1.5 rounded-lg font-mono text-xs font-medium transition-all ${
+              className={`px-3.5 py-1.5 rounded-lg text-xs font-semibold transition-all ${
                 selectedCategory === cat
-                  ? 'bg-[#174C3C] text-white font-bold shadow-sm'
+                  ? 'bg-[#174C3C] text-white shadow-sm'
                   : 'bg-white text-[#59635E] hover:text-[#174C3C] border border-[#DDE1DC]'
               }`}
             >
@@ -86,10 +86,10 @@ export const Projects: React.FC = () => {
                 {/* Project Header Bar */}
                 <div className="p-6 pb-4 border-b border-[#DDE1DC] flex flex-wrap items-center justify-between gap-3 bg-[#F6F5F0]/40">
                   <div className="flex items-center gap-3">
-                    <span className="font-mono text-xs font-black px-2.5 py-1 rounded bg-[#DCE8E1] border border-[#174C3C]/20 text-[#123C32]">
+                    <span className="text-xs font-bold px-2.5 py-1 rounded bg-[#DCE8E1] border border-[#174C3C]/20 text-[#123C32]">
                       PROJECT {project.number}
                     </span>
-                    <span className="font-mono text-xs text-[#5F806F] font-semibold">
+                    <span className="text-xs text-[#5F806F] font-semibold">
                       // {project.category.toUpperCase()}
                     </span>
                   </div>
@@ -100,7 +100,7 @@ export const Projects: React.FC = () => {
                         href={project.githubUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-[#F6F5F0] hover:bg-[#DCE8E1] border border-[#DDE1DC] text-xs font-mono text-[#17201D] hover:text-[#174C3C] transition-colors"
+                        className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-[#F6F5F0] hover:bg-[#DCE8E1] border border-[#DDE1DC] text-xs font-semibold text-[#17201D] hover:text-[#174C3C] transition-colors"
                         onClick={(e) => e.stopPropagation()}
                         aria-label={`GitHub repository for ${project.title}`}
                       >
@@ -113,7 +113,7 @@ export const Projects: React.FC = () => {
                         href={project.liveUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-[#174C3C] hover:bg-[#123C32] text-white text-xs font-mono font-semibold transition-colors shadow-sm"
+                        className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-[#174C3C] hover:bg-[#123C32] text-white text-xs font-semibold transition-colors shadow-sm"
                         onClick={(e) => e.stopPropagation()}
                         aria-label={`Live demo for ${project.title}`}
                       >
@@ -131,7 +131,7 @@ export const Projects: React.FC = () => {
                       <h3 className="font-sans font-extrabold text-2xl sm:text-3xl text-[#17201D] tracking-tight group-hover:text-[#174C3C] transition-colors">
                         {project.displayName || project.title}
                       </h3>
-                      <p className="font-mono text-xs text-[#5F806F] mt-1 font-semibold">
+                      <p className="text-xs text-[#5F806F] mt-1 font-semibold">
                         {project.tagline}
                       </p>
                     </div>
@@ -142,15 +142,15 @@ export const Projects: React.FC = () => {
 
                     {/* Technical Visual Widget for SPAMSENSE AI */}
                     {project.id === 'spamsense-ai' && (
-                      <div className="p-4 rounded-xl bg-[#F6F5F0] border border-[#DDE1DC] font-mono text-xs text-[#17201D] space-y-3">
-                        <div className="flex items-center justify-between text-[11px] text-[#59635E] pb-2 border-b border-[#DDE1DC]">
+                      <div className="p-4 rounded-xl bg-[#F6F5F0] border border-[#DDE1DC] text-xs text-[#17201D] space-y-3">
+                        <div className="flex items-center justify-between text-xs text-[#59635E] pb-2 border-b border-[#DDE1DC]">
                           <span className="flex items-center gap-1.5 text-[#123C32] font-semibold">
                             <Mail size={13} className="text-[#174C3C]" />
-                            AGENTIC_EMAIL_PIPELINE
+                            AGENTIC EMAIL PIPELINE
                           </span>
                           <span className="text-[#174C3C] font-bold">8 ACTIVE AGENTS</span>
                         </div>
-                        <div className="flex items-center justify-between gap-1 text-[10px] text-center font-mono">
+                        <div className="flex items-center justify-between gap-1 text-[11px] text-center font-medium">
                           <div className="p-1.5 rounded bg-white border border-[#DDE1DC] flex-1">GMAIL</div>
                           <span className="text-[#8A938E]">→</span>
                           <div className="p-1.5 rounded bg-white border border-[#DDE1DC] flex-1">AI AGENTS</div>
@@ -163,7 +163,7 @@ export const Projects: React.FC = () => {
                     {/* Architecture / Key Innovations Highlights */}
                     {project.architectureHighlights && project.architectureHighlights.length > 0 && (
                       <div className="pt-2">
-                        <div className="text-[11px] font-mono text-[#5F806F] uppercase tracking-wider mb-2 flex items-center gap-1.5 font-semibold">
+                        <div className="text-xs text-[#5F806F] uppercase tracking-wider mb-2 flex items-center gap-1.5 font-bold">
                           <Binary size={12} className="text-[#174C3C]" />
                           <span>Key Architecture Innovations:</span>
                         </div>
@@ -184,7 +184,7 @@ export const Projects: React.FC = () => {
                         {project.metrics.map((metric, mIdx) => (
                           <span
                             key={mIdx}
-                            className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-[#ECEBE5] border border-[#DDE1DC] text-[11px] font-mono text-[#315C50] font-medium"
+                            className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-[#ECEBE5] border border-[#DDE1DC] text-xs text-[#315C50] font-semibold"
                           >
                             <ShieldCheck size={11} className="text-[#174C3C]" />
                             {metric}
@@ -196,14 +196,14 @@ export const Projects: React.FC = () => {
 
                   {/* Technologies Tags Container */}
                   <div className="mt-8 pt-6 border-t border-[#DDE1DC]">
-                    <div className="text-[10px] font-mono text-[#8A938E] uppercase tracking-wider mb-2.5 font-semibold">
-                      TECH_STACK // IMPLEMENTATION
+                    <div className="text-xs text-[#8A938E] uppercase tracking-wider mb-2.5 font-bold">
+                      TECH STACK // IMPLEMENTATION
                     </div>
                     <div className="flex flex-wrap gap-1.5">
                       {project.technologies.map((tech) => (
                         <span
                           key={tech}
-                          className="px-2.5 py-1 rounded bg-[#ECEBE5] border border-[#DDE1DC] text-[11px] font-mono text-[#315C50] font-medium group-hover:border-[#5F806F]/50 transition-colors"
+                          className="px-2.5 py-1 rounded bg-[#ECEBE5] border border-[#DDE1DC] text-xs text-[#315C50] font-semibold group-hover:border-[#5F806F]/50 transition-colors"
                         >
                           {tech}
                         </span>
@@ -213,10 +213,10 @@ export const Projects: React.FC = () => {
                 </div>
 
                 {/* Bottom Interactive Hover Indicator */}
-                <div className="px-6 py-3 bg-[#F6F5F0]/60 border-t border-[#DDE1DC] flex items-center justify-between text-xs font-mono text-[#59635E]">
+                <div className="px-6 py-3 bg-[#F6F5F0]/60 border-t border-[#DDE1DC] flex items-center justify-between text-xs text-[#59635E]">
                   <div className="flex items-center gap-2">
                     <span className="w-1.5 h-1.5 rounded-full bg-[#174C3C]" />
-                    <span>VERIFIED PRODUCTION REPO</span>
+                    <span className="font-medium">VERIFIED PRODUCTION REPO</span>
                   </div>
                   <div className="inline-flex items-center gap-1 text-[#174C3C] font-semibold group-hover:translate-x-1 transition-transform">
                     <span>EXPLORE DETAILS →</span>
@@ -250,16 +250,16 @@ export const Projects: React.FC = () => {
               {/* Modal Header */}
               <div className="flex items-start justify-between pb-6 border-b border-[#DDE1DC] gap-4">
                 <div className="space-y-2">
-                  <div className="flex items-center gap-2 font-mono text-xs text-[#5F806F]">
+                  <div className="flex items-center gap-2 text-xs text-[#5F806F]">
                     <span className="px-2.5 py-0.5 rounded bg-[#DCE8E1] border border-[#174C3C]/20 font-bold text-[#123C32]">
                       PROJECT {activeModalProject.number}
                     </span>
-                    <span>// {activeModalProject.category}</span>
+                    <span className="font-semibold">// {activeModalProject.category}</span>
                   </div>
                   <h3 className="font-sans font-black text-2xl sm:text-4xl text-[#17201D] tracking-tight">
                     {activeModalProject.displayName || activeModalProject.title}
                   </h3>
-                  <p className="font-mono text-xs sm:text-sm text-[#59635E]">
+                  <p className="text-xs sm:text-sm text-[#59635E] font-medium">
                     {activeModalProject.tagline}
                   </p>
                 </div>
@@ -275,7 +275,7 @@ export const Projects: React.FC = () => {
 
               {/* Overview Section */}
               <div className="space-y-3">
-                <div className="font-mono text-xs text-[#174C3C] uppercase tracking-wider flex items-center gap-2 font-semibold">
+                <div className="text-xs text-[#174C3C] uppercase tracking-wider flex items-center gap-2 font-bold">
                   <Cpu size={14} className="text-[#174C3C]" />
                   <span>OVERVIEW & SYSTEM ARCHITECTURE</span>
                 </div>
@@ -287,18 +287,18 @@ export const Projects: React.FC = () => {
               {/* Dedicated Agentic Pipeline Section */}
               {activeModalProject.agents && activeModalProject.agents.length > 0 && (
                 <div className="space-y-6 pt-2">
-                  <div className="font-mono text-xs text-[#123C32] uppercase tracking-wider flex items-center justify-between pb-2 border-b border-[#DDE1DC] font-bold">
+                  <div className="text-xs text-[#123C32] uppercase tracking-wider flex items-center justify-between pb-2 border-b border-[#DDE1DC] font-bold">
                     <span className="flex items-center gap-2">
                       <Layers size={14} className="text-[#174C3C]" />
                       <span>AGENTIC PIPELINE ARCHITECTURE (8 AGENTS)</span>
                     </span>
-                    <span className="text-[#59635E] font-mono text-[10px]">AUTONOMOUS MULTI-AGENT EXECUTION</span>
+                    <span className="text-[#59635E] text-xs font-semibold">AUTONOMOUS MULTI-AGENT EXECUTION</span>
                   </div>
 
                   {/* Flow Diagram Summary */}
-                  <div className="p-4 rounded-xl bg-[#F6F5F0] border border-[#DDE1DC] font-mono text-[11px] space-y-2">
-                    <div className="text-[#59635E] text-[10px] uppercase font-semibold">PIPELINE EXECUTION FLOW:</div>
-                    <div className="flex flex-wrap items-center gap-2 text-[#17201D]">
+                  <div className="p-4 rounded-xl bg-[#F6F5F0] border border-[#DDE1DC] text-xs space-y-2">
+                    <div className="text-[#59635E] text-xs uppercase font-bold">PIPELINE EXECUTION FLOW:</div>
+                    <div className="flex flex-wrap items-center gap-2 text-[#17201D] font-medium">
                       <span className="px-2 py-0.5 rounded bg-white border border-[#DDE1DC]">GMAIL</span>
                       <span className="text-[#8A938E]">→</span>
                       <span className="px-2 py-0.5 rounded bg-white border border-[#DDE1DC]">EMAIL FETCH</span>
@@ -329,16 +329,16 @@ export const Projects: React.FC = () => {
                         className="p-4 rounded-xl bg-[#F6F5F0] border border-[#DDE1DC] hover:border-[#174C3C] transition-colors flex flex-col justify-between space-y-2 relative"
                       >
                         <div>
-                          <div className="flex items-center justify-between font-mono text-xs text-[#59635E] mb-1">
+                          <div className="flex items-center justify-between text-xs text-[#59635E] mb-1">
                             <span className="font-bold text-[#123C32] px-1.5 py-0.5 rounded bg-white border border-[#DDE1DC]">
                               {agent.number}
                             </span>
-                            <span className="text-[10px] text-[#8A938E]">STEP {aIdx + 1}</span>
+                            <span className="text-xs text-[#8A938E] font-semibold">STEP {aIdx + 1}</span>
                           </div>
-                          <h4 className="font-mono text-xs font-bold text-[#17201D] mt-2">
+                          <h4 className="text-xs font-bold text-[#17201D] mt-2">
                             {agent.name}
                           </h4>
-                          <p className="text-xs text-[#59635E] leading-relaxed font-sans mt-1">
+                          <p className="text-xs text-[#59635E] leading-relaxed font-sans mt-1 font-normal">
                             {agent.responsibility}
                           </p>
                         </div>
@@ -351,7 +351,7 @@ export const Projects: React.FC = () => {
               {/* Key Capabilities */}
               {activeModalProject.keyCapabilities && (
                 <div className="space-y-3 pt-2">
-                  <div className="font-mono text-xs text-[#174C3C] uppercase tracking-wider flex items-center gap-2 font-semibold">
+                  <div className="text-xs text-[#174C3C] uppercase tracking-wider flex items-center gap-2 font-bold">
                     <ShieldCheck size={14} className="text-[#174C3C]" />
                     <span>KEY CAPABILITIES</span>
                   </div>
@@ -359,7 +359,7 @@ export const Projects: React.FC = () => {
                     {activeModalProject.keyCapabilities.map((cap, cIdx) => (
                       <div
                         key={cIdx}
-                        className="flex items-start gap-2.5 p-3 rounded-lg bg-[#F6F5F0] border border-[#DDE1DC] text-xs text-[#17201D] font-sans"
+                        className="flex items-start gap-2.5 p-3 rounded-lg bg-[#F6F5F0] border border-[#DDE1DC] text-xs text-[#17201D] font-medium"
                       >
                         <CheckCircle2 size={14} className="text-[#174C3C] mt-0.5 shrink-0" />
                         <span>{cap}</span>
@@ -371,7 +371,7 @@ export const Projects: React.FC = () => {
 
               {/* Complete Technology Stack */}
               <div className="space-y-3 pt-2">
-                <div className="font-mono text-xs text-[#174C3C] uppercase tracking-wider flex items-center gap-2 font-semibold">
+                <div className="text-xs text-[#174C3C] uppercase tracking-wider flex items-center gap-2 font-bold">
                   <Binary size={14} className="text-[#174C3C]" />
                   <span>COMPLETE TECHNOLOGY STACK</span>
                 </div>
@@ -379,7 +379,7 @@ export const Projects: React.FC = () => {
                   {(activeModalProject.allTechnologies || activeModalProject.technologies).map((tech) => (
                     <span
                       key={tech}
-                      className="px-3 py-1.5 rounded-lg bg-[#ECEBE5] border border-[#DDE1DC] text-xs font-mono text-[#315C50] font-medium"
+                      className="px-3 py-1.5 rounded-lg bg-[#ECEBE5] border border-[#DDE1DC] text-xs text-[#315C50] font-semibold"
                     >
                       {tech}
                     </span>
@@ -389,7 +389,7 @@ export const Projects: React.FC = () => {
 
               {/* Modal Footer Actions */}
               <div className="pt-6 border-t border-[#DDE1DC] flex flex-wrap items-center justify-between gap-4">
-                <div className="font-mono text-xs text-[#59635E]">
+                <div className="text-xs text-[#59635E] font-medium">
                   REPOSITORY STATUS: PUBLIC
                 </div>
 
@@ -399,7 +399,7 @@ export const Projects: React.FC = () => {
                       href={activeModalProject.githubUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-[#174C3C] text-white font-mono font-bold text-xs tracking-wider uppercase hover:bg-[#123C32] transition-all shadow-md"
+                      className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-[#174C3C] text-white font-bold text-xs tracking-wider uppercase hover:bg-[#123C32] transition-all shadow-md"
                     >
                       <GithubIcon size={15} />
                       <span>VIEW ON GITHUB →</span>
@@ -407,7 +407,7 @@ export const Projects: React.FC = () => {
                   )}
                   <button
                     onClick={() => setActiveModalProject(null)}
-                    className="px-4 py-2.5 rounded-lg bg-[#F6F5F0] border border-[#DDE1DC] hover:border-[#174C3C] text-xs font-mono text-[#17201D] transition-colors"
+                    className="px-4 py-2.5 rounded-lg bg-[#F6F5F0] border border-[#DDE1DC] hover:border-[#174C3C] text-xs font-semibold text-[#17201D] transition-colors"
                   >
                     CLOSE
                   </button>

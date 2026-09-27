@@ -15,28 +15,28 @@ export const Footer: React.FC = () => {
           {/* Brand & Monogram Info */}
           <div className="space-y-2">
             <div className="flex items-center gap-2">
-              <span className="font-sans font-black text-2xl tracking-widest text-[#123C32]">
+              <span className="font-sans font-black text-2xl tracking-wider text-[#123C32]">
                 {PERSONAL_INFO.monogram}
               </span>
-              <span className="font-mono text-xs text-[#5F806F]">
+              <span className="text-xs text-[#5F806F] font-semibold">
                 // {PERSONAL_INFO.name}
               </span>
             </div>
-            <p className="font-mono text-xs text-[#59635E]">
+            <p className="text-xs text-[#59635E] font-medium">
               AI Developer · ECE Undergraduate · Builder
             </p>
-            <p className="font-mono text-[11px] text-[#8A938E]">
+            <p className="text-xs text-[#8A938E] font-normal">
               {PERSONAL_INFO.location}
             </p>
           </div>
 
           {/* Social Links & Back to Top */}
-          <div className="flex flex-wrap items-center gap-6 font-mono text-xs">
+          <div className="flex flex-wrap items-center gap-6 text-xs">
             <a
               href={PERSONAL_INFO.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[#59635E] hover:text-[#174C3C] font-medium transition-colors"
+              className="text-[#59635E] hover:text-[#174C3C] font-semibold transition-colors"
             >
               GitHub
             </a>
@@ -44,20 +44,20 @@ export const Footer: React.FC = () => {
               href={PERSONAL_INFO.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[#59635E] hover:text-[#174C3C] font-medium transition-colors"
+              className="text-[#59635E] hover:text-[#174C3C] font-semibold transition-colors"
             >
               LinkedIn
             </a>
             <a
               href={`mailto:${PERSONAL_INFO.email}`}
-              className="text-[#59635E] hover:text-[#174C3C] font-medium transition-colors"
+              className="text-[#59635E] hover:text-[#174C3C] font-semibold transition-colors"
             >
               Email
             </a>
             
             <button
               onClick={scrollToTop}
-              className="flex items-center gap-1 px-3.5 py-1.5 rounded-lg bg-white border border-[#DDE1DC] text-[#174C3C] hover:bg-[#DCE8E1]/50 hover:border-[#5F806F] transition-all ml-auto md:ml-4 font-semibold shadow-sm"
+              className="flex items-center gap-1 px-3.5 py-1.5 rounded-lg bg-white border border-[#DDE1DC] text-[#174C3C] hover:bg-[#DCE8E1]/50 hover:border-[#5F806F] transition-all ml-auto md:ml-4 font-bold shadow-sm"
               aria-label="Back to top"
             >
               <span>TOP</span>
@@ -68,11 +68,11 @@ export const Footer: React.FC = () => {
         </div>
 
         {/* Bottom Credits & Build Stack */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 font-mono text-[11px] text-[#8A938E]">
-          <div>
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#8A938E]">
+          <div className="font-medium">
             © 2026 {PERSONAL_INFO.name}. All rights reserved.
           </div>
-          <div className="flex items-center gap-2 text-[#59635E]">
+          <div className="flex items-center gap-2 text-[#59635E] font-medium">
             <span>Built with React + Vite + TypeScript + Tailwind CSS</span>
           </div>
         </div>

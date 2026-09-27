@@ -46,17 +46,17 @@ export const QuickStats: React.FC = () => {
             transition={{ duration: 0.5, delay: 0 }}
             className="flex flex-col p-5 rounded-xl bg-white border border-[#DDE1DC] hover:border-[#174C3C] transition-all hover:-translate-y-1 shadow-sm group"
           >
-            <div className="flex items-center justify-between text-[#59635E] mb-3 font-mono text-xs">
+            <div className="flex items-center justify-between text-[#59635E] mb-3 text-xs font-semibold">
               <span>METRIC // 01</span>
               <Award size={16} className="text-[#174C3C]" />
             </div>
             <div className="flex items-baseline gap-1">
-              <span className="font-sans font-black text-3xl sm:text-4xl lg:text-5xl text-[#123C32] tracking-tight">
+              <span className="font-sans font-extrabold text-3xl sm:text-4xl lg:text-5xl text-[#123C32] tracking-tight">
                 {isInView ? cgpa.toFixed(2) : '0.00'}
               </span>
             </div>
-            <span className="font-mono text-xs font-semibold text-[#17201D] mt-2">CGPA</span>
-            <span className="font-mono text-[11px] text-[#59635E]">Academic Standing</span>
+            <span className="text-xs font-bold text-[#17201D] mt-2">CGPA</span>
+            <span className="text-xs text-[#59635E] font-medium">Academic Standing</span>
           </motion.div>
 
           {/* 2029 Expected Graduation */}
@@ -66,17 +66,17 @@ export const QuickStats: React.FC = () => {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="flex flex-col p-5 rounded-xl bg-white border border-[#DDE1DC] hover:border-[#174C3C] transition-all hover:-translate-y-1 shadow-sm group"
           >
-            <div className="flex items-center justify-between text-[#59635E] mb-3 font-mono text-xs">
+            <div className="flex items-center justify-between text-[#59635E] mb-3 text-xs font-semibold">
               <span>METRIC // 02</span>
               <Calendar size={16} className="text-[#174C3C]" />
             </div>
             <div className="flex items-baseline gap-1">
-              <span className="font-sans font-black text-3xl sm:text-4xl lg:text-5xl text-[#123C32] tracking-tight">
+              <span className="font-sans font-extrabold text-3xl sm:text-4xl lg:text-5xl text-[#123C32] tracking-tight">
                 {isInView ? gradYear : '2029'}
               </span>
             </div>
-            <span className="font-mono text-xs font-semibold text-[#17201D] mt-2">GRADUATION</span>
-            <span className="font-mono text-[11px] text-[#59635E]">B.E. ECE Class</span>
+            <span className="text-xs font-bold text-[#17201D] mt-2">GRADUATION</span>
+            <span className="text-xs text-[#59635E] font-medium">B.E. ECE Class</span>
           </motion.div>
 
           {/* III Year */}
@@ -86,18 +86,18 @@ export const QuickStats: React.FC = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="flex flex-col p-5 rounded-xl bg-white border border-[#DDE1DC] hover:border-[#174C3C] transition-all hover:-translate-y-1 shadow-sm group"
           >
-            <div className="flex items-center justify-between text-[#59635E] mb-3 font-mono text-xs">
+            <div className="flex items-center justify-between text-[#59635E] mb-3 text-xs font-semibold">
               <span>METRIC // 03</span>
               <GraduationCap size={16} className="text-[#174C3C]" />
             </div>
             <div className="flex items-baseline gap-1">
-              <span className="font-sans font-black text-3xl sm:text-4xl lg:text-5xl text-[#123C32] tracking-tight">
+              <span className="font-sans font-extrabold text-3xl sm:text-4xl lg:text-5xl text-[#123C32] tracking-tight">
                 III
               </span>
-              <span className="text-[#59635E] font-mono text-lg font-normal ml-1">Year</span>
+              <span className="text-[#59635E] text-lg font-normal ml-1">Year</span>
             </div>
-            <span className="font-mono text-xs font-semibold text-[#17201D] mt-2">UNDERGRADUATE</span>
-            <span className="font-mono text-[11px] text-[#59635E]">Electronics & Comm</span>
+            <span className="text-xs font-bold text-[#17201D] mt-2">UNDERGRADUATE</span>
+            <span className="text-xs text-[#59635E] font-medium">Electronics & Comm</span>
           </motion.div>
 
           {/* NO Backlogs */}
@@ -107,17 +107,17 @@ export const QuickStats: React.FC = () => {
             transition={{ duration: 0.5, delay: 0.3 }}
             className="flex flex-col p-5 rounded-xl bg-white border border-[#DDE1DC] hover:border-[#174C3C] transition-all hover:-translate-y-1 shadow-sm group"
           >
-            <div className="flex items-center justify-between text-[#59635E] mb-3 font-mono text-xs">
+            <div className="flex items-center justify-between text-[#59635E] mb-3 text-xs font-semibold">
               <span>METRIC // 04</span>
               <CheckCircle2 size={16} className="text-[#174C3C] group-hover:scale-110 transition-transform" />
             </div>
             <div className="flex items-baseline gap-1">
-              <span className="font-sans font-black text-3xl sm:text-4xl lg:text-5xl text-[#123C32] tracking-tight">
+              <span className="font-sans font-extrabold text-3xl sm:text-4xl lg:text-5xl text-[#123C32] tracking-tight">
                 NO
               </span>
             </div>
-            <span className="font-mono text-xs font-semibold text-[#17201D] mt-2">BACKLOGS</span>
-            <span className="font-mono text-[11px] text-[#174C3C] font-semibold">100% Clear Standing</span>
+            <span className="text-xs font-bold text-[#17201D] mt-2">BACKLOGS</span>
+            <span className="text-xs text-[#174C3C] font-semibold">100% Clear Standing</span>
           </motion.div>
 
         </div>

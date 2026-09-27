@@ -9,7 +9,7 @@ export const PatentFeature: React.FC = () => {
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         
         {/* Eyebrow / Category */}
-        <div className="flex items-center gap-2 font-mono text-xs text-[#174C3C] mb-4 uppercase tracking-widest font-semibold">
+        <div className="flex items-center gap-2 text-xs text-[#174C3C] mb-4 uppercase tracking-wider font-semibold">
           <Satellite size={14} className="text-[#174C3C] animate-pulse" />
           <span>04 // INTELLECTUAL PROPERTY & PUBLISHED RESEARCH</span>
         </div>
@@ -42,27 +42,27 @@ export const PatentFeature: React.FC = () => {
               
               {/* Badge Bar */}
               <div className="flex flex-wrap items-center gap-3">
-                <span className="px-3 py-1 rounded-full bg-white text-[#123C32] font-mono text-xs font-bold uppercase tracking-wider shadow-sm">
+                <span className="px-3 py-1 rounded-full bg-white text-[#123C32] text-xs font-bold uppercase tracking-wider shadow-sm">
                   {PATENT_DETAILS.status}
                 </span>
-                <span className="font-mono text-xs text-[#DCE8E1]">
+                <span className="text-xs font-medium text-[#DCE8E1]">
                   {PATENT_DETAILS.field}
                 </span>
               </div>
 
               {/* Patent Title */}
-              <h3 className="font-sans font-extrabold text-2xl sm:text-3xl lg:text-4xl text-white tracking-tight leading-snug">
+              <h3 className="font-sans font-bold text-2xl sm:text-3xl lg:text-4xl text-white tracking-tight leading-snug">
                 "{PATENT_DETAILS.title}"
               </h3>
 
               {/* Description */}
-              <p className="text-[#DCE8E1] text-base sm:text-lg leading-relaxed">
+              <p className="text-[#DCE8E1] text-base sm:text-lg leading-relaxed font-normal">
                 {PATENT_DETAILS.description}
               </p>
 
               {/* Key Technical Highlights */}
               <div className="pt-4 space-y-3">
-                <div className="font-mono text-xs text-[#DCE8E1] uppercase tracking-wider flex items-center gap-2 font-semibold">
+                <div className="text-xs text-[#DCE8E1] uppercase tracking-wider flex items-center gap-2 font-bold">
                   <Cpu size={14} className="text-white" />
                   <span>Research Pillars & Innovation Mechanisms:</span>
                 </div>
@@ -87,37 +87,37 @@ export const PatentFeature: React.FC = () => {
             </div>
 
             {/* Right 4 Cols: Technical Telemetry Box */}
-            <div className="lg:col-span-4 p-6 rounded-2xl bg-[#174C3C]/40 border border-[#5F806F]/40 space-y-4 font-mono text-xs">
+            <div className="lg:col-span-4 p-6 rounded-2xl bg-[#174C3C]/40 border border-[#5F806F]/40 space-y-4 text-xs">
               <div className="pb-3 border-b border-[#5F806F]/40 flex justify-between items-center text-[#DCE8E1]">
-                <span>SENSOR_FUSION</span>
+                <span className="font-semibold uppercase">SENSOR FUSION</span>
                 <span className="text-white font-bold">SAR + OPTICAL</span>
               </div>
 
               <div className="space-y-3">
                 <div className="flex justify-between py-1 border-b border-[#5F806F]/30 text-[#DCE8E1]/80">
-                  <span>Modality:</span>
-                  <span className="text-white">Multi-Temporal SAR</span>
+                  <span className="font-medium">Modality:</span>
+                  <span className="text-white font-semibold">Multi-Temporal SAR</span>
                 </div>
                 <div className="flex justify-between py-1 border-b border-[#5F806F]/30 text-[#DCE8E1]/80">
-                  <span>Grounding:</span>
-                  <span className="text-white">Spatial Mask Evidence</span>
+                  <span className="font-medium">Grounding:</span>
+                  <span className="text-white font-semibold">Spatial Mask Evidence</span>
                 </div>
                 <div className="flex justify-between py-1 border-b border-[#5F806F]/30 text-[#DCE8E1]/80">
-                  <span>Interaction:</span>
-                  <span className="text-white">Natural Language</span>
+                  <span className="font-medium">Interaction:</span>
+                  <span className="text-white font-semibold">Natural Language</span>
                 </div>
                 <div className="flex justify-between py-1 border-b border-[#5F806F]/30 text-[#DCE8E1]/80">
-                  <span>Origin:</span>
-                  <span className="text-white">ECE + AI Innovation</span>
+                  <span className="font-medium">Origin:</span>
+                  <span className="text-white font-semibold">ECE + AI Innovation</span>
                 </div>
                 <div className="flex justify-between py-1 text-[#DCE8E1]/80">
-                  <span>Geo Anchor:</span>
-                  <span className="text-white font-mono">{PATENT_DETAILS.coordinates}</span>
+                  <span className="font-medium">Geo Anchor:</span>
+                  <span className="text-white font-semibold">{PATENT_DETAILS.coordinates}</span>
                 </div>
               </div>
 
-              <div className="pt-4 border-t border-[#5F806F]/40 flex items-center justify-between text-[11px] text-[#DCE8E1]">
-                <span className="flex items-center gap-1.5">
+              <div className="pt-4 border-t border-[#5F806F]/40 flex items-center justify-between text-xs text-[#DCE8E1]">
+                <span className="flex items-center gap-1.5 font-medium">
                   <span className="w-2 h-2 rounded-full bg-emerald-400" />
                   AUTHENTICATED RECORD
                 </span>

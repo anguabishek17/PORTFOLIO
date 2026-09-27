@@ -70,15 +70,15 @@ export const Navbar: React.FC = () => {
             className="group flex items-center gap-2.5 focus:outline-none"
           >
             <div className="relative flex items-center justify-center w-9 h-9 rounded-lg bg-[#123C32] border border-[#174C3C] group-hover:bg-[#174C3C] transition-all duration-300 shadow-sm">
-              <span className="font-mono text-sm font-black tracking-tighter text-white group-hover:scale-105 transition-transform">
+              <span className="font-sans text-sm font-black tracking-tight text-white group-hover:scale-105 transition-transform">
                 A
               </span>
             </div>
             <div className="flex flex-col">
-              <span className="font-bold tracking-widest text-sm text-[#123C32] group-hover:text-[#174C3C] transition-colors">
+              <span className="font-bold tracking-wider text-sm text-[#123C32] group-hover:text-[#174C3C] transition-colors">
                 {PERSONAL_INFO.monogram}
               </span>
-              <span className="font-mono text-[9px] text-[#59635E] uppercase tracking-wider hidden sm:block">
+              <span className="text-[10px] font-medium text-[#59635E] uppercase tracking-wider hidden sm:block">
                 ECE · AI DEV
               </span>
             </div>
@@ -139,7 +139,7 @@ export const Navbar: React.FC = () => {
             <a
               href="#contact"
               onClick={(e) => handleNavClick(e, { name: 'Contact', href: '#contact' })}
-              className="hidden md:flex items-center gap-1.5 text-xs font-mono font-medium px-4 py-2 rounded-lg bg-[#174C3C] hover:bg-[#123C32] text-white transition-all shadow-sm"
+              className="hidden md:flex items-center gap-1.5 text-xs font-semibold px-4 py-2 rounded-lg bg-[#174C3C] hover:bg-[#123C32] text-white transition-all shadow-sm active:scale-95"
             >
               <span>CONNECT</span>
               <ArrowUpRight size={13} />
@@ -168,7 +168,7 @@ export const Navbar: React.FC = () => {
             className="fixed inset-0 z-30 bg-[#F6F5F0]/98 backdrop-blur-2xl lg:hidden flex flex-col justify-between pt-24 pb-10 px-8"
           >
             <div className="flex flex-col space-y-4">
-              <div className="flex items-center gap-2 pb-4 border-b border-[#DDE1DC] font-mono text-xs text-[#59635E]">
+              <div className="flex items-center gap-2 pb-4 border-b border-[#DDE1DC] text-xs font-semibold text-[#59635E]">
                 <Terminal size={14} className="text-[#174C3C]" />
                 <span>NAVIGATION // MENU</span>
               </div>
@@ -192,7 +192,7 @@ export const Navbar: React.FC = () => {
                       }`}
                     >
                       <span>{link.name}</span>
-                      <span className="font-mono text-xs text-[#8A938E]">0{idx + 1}</span>
+                      <span className="text-xs font-medium text-[#8A938E]">0{idx + 1}</span>
                     </motion.a>
                   );
                 })}
@@ -220,7 +220,7 @@ export const Navbar: React.FC = () => {
                   <span>LinkedIn</span>
                 </a>
               </div>
-              <p className="text-center font-mono text-[11px] text-[#59635E]">
+              <p className="text-center text-xs font-medium text-[#59635E]">
                 ANGU ABISHEK M · {PERSONAL_INFO.location}
               </p>
             </div>

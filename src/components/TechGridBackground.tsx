@@ -91,15 +91,15 @@ export const TechGridBackground: React.FC = () => {
       <canvas ref={canvasRef} className="absolute inset-0 w-full h-full opacity-60" />
 
       {/* Subtle coordinate watermark / technical telemetry */}
-      <div className="hidden lg:flex fixed bottom-6 left-6 flex-col font-mono text-[10px] text-[#59635E] tracking-wider space-y-1 select-none pointer-events-none z-10">
+      <div className="hidden lg:flex fixed bottom-6 left-6 flex-col text-[11px] text-[#59635E] tracking-wide space-y-1 select-none pointer-events-none z-10 font-medium">
         <span className="flex items-center gap-1.5">
           <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#174C3C] animate-pulse" />
           SYSTEM_ONLINE // ECE-AI_CORE
         </span>
-        <span className="text-[#8A938E]">12.7409° N · 77.8253° E // HOSUR_IN</span>
+        <span className="text-[#8A938E] text-[10px]">12.7409° N · 77.8253° E // HOSUR_IN</span>
       </div>
 
-      <div className="hidden lg:block fixed bottom-6 right-6 font-mono text-[10px] text-[#8A938E] tracking-wider select-none pointer-events-none z-10">
+      <div className="hidden lg:block fixed bottom-6 right-6 text-[11px] text-[#8A938E] tracking-wide select-none pointer-events-none z-10 font-medium">
         ANGU_PORTFOLIO // V2.6
       </div>
     </div>
