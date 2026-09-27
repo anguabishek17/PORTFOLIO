@@ -253,15 +253,6 @@ export const PortfolioLoader: React.FC<PortfolioLoaderProps> = memo(({ onLoading
         </div>
 
       </div>
-
-      {/* Bottom Telemetry Footer */}
-      <div className="absolute bottom-6 left-6 sm:left-8 right-6 sm:right-8 flex items-center justify-between font-mono text-[10px] text-zinc-600 border-t border-zinc-900/80 pt-3">
-        <span>SYS_CORE: ONLINE</span>
-        <span className="text-zinc-500 font-medium">
-          {stage >= 4 ? 'INITIALIZATION COMPLETE' : 'BOOTSTRAP IN PROGRESS'}
-        </span>
-        <span>HOSUR // INDIA</span>
-      </div>
     </motion.div>
   );
 });
