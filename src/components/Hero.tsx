@@ -177,31 +177,38 @@ export const Hero: React.FC = () => {
                 </span>
               </div>
 
-              {/* Center Abstract AI / Engineering Geometry Matrix */}
-              <div className="relative my-auto flex flex-col items-center justify-center py-8">
+              {/* Center Profile Visual & Engineering Geometry Matrix */}
+              <div className="relative my-auto flex flex-col items-center justify-center py-6">
                 
-                {/* Concentric Coordinate Rings */}
-                <div className="relative w-44 h-44 rounded-full border border-zinc-800 flex items-center justify-center">
-                  <div className="absolute inset-0 rounded-full border border-dashed border-zinc-700/60 animate-[spin_40s_linear_infinite]" />
-                  <div className="w-32 h-32 rounded-full border border-zinc-800/90 flex items-center justify-center bg-zinc-900/50">
-                    <div className="w-20 h-20 rounded-full bg-gradient-to-tr from-zinc-800 to-zinc-950 border border-zinc-700 flex items-center justify-center shadow-inner">
-                      <span className="font-mono text-2xl font-black tracking-tighter text-white">
-                        A
-                      </span>
-                    </div>
+                {/* Concentric Coordinate Rings with Profile Portrait */}
+                <div className="relative w-52 h-52 sm:w-56 sm:h-56 rounded-full border border-zinc-800 flex items-center justify-center">
+                  <div className="absolute inset-0 rounded-full border border-dashed border-zinc-700/60 animate-[spin_50s_linear_infinite]" />
+                  
+                  {/* Outer glow ring */}
+                  <div className="absolute -inset-1 rounded-full bg-gradient-to-tr from-white/10 via-transparent to-white/5 blur-sm" />
+
+                  {/* Profile Image Container */}
+                  <div className="relative w-44 h-44 sm:w-48 sm:h-48 rounded-full overflow-hidden border-2 border-zinc-700/80 shadow-2xl bg-zinc-900 group-hover:border-white/80 transition-all duration-500">
+                    <img
+                      src={PERSONAL_INFO.avatarUrl}
+                      alt={PERSONAL_INFO.name}
+                      className="w-full h-full object-cover object-top scale-105 group-hover:scale-110 transition-transform duration-700 filter grayscale contrast-105 hover:grayscale-0"
+                    />
+                    {/* Subtle inner shadow overlay */}
+                    <div className="absolute inset-0 rounded-full ring-1 ring-inset ring-white/10 pointer-events-none" />
                   </div>
 
                   {/* Satellite indicators */}
-                  <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-white shadow-[0_0_8px_white]" />
-                  <div className="absolute bottom-2 right-2 w-1.5 h-1.5 rounded-full bg-zinc-500" />
+                  <div className="absolute top-1 left-1/2 -translate-x-1/2 -translate-y-1/2 w-2.5 h-2.5 rounded-full bg-white shadow-[0_0_10px_white]" />
+                  <div className="absolute bottom-3 right-4 w-2 h-2 rounded-full bg-emerald-400 shadow-[0_0_6px_#34d399]" />
                 </div>
 
                 {/* Subtitle Matrix */}
-                <div className="mt-6 text-center space-y-1">
-                  <p className="font-mono text-xs font-semibold text-white tracking-wide">
-                    ANGU ABISHEK M
+                <div className="mt-5 text-center space-y-1">
+                  <p className="font-mono text-sm font-bold text-white tracking-wider uppercase">
+                    {PERSONAL_INFO.name}
                   </p>
-                  <p className="font-mono text-[11px] text-zinc-400">
+                  <p className="font-mono text-xs text-zinc-400">
                     B.E. ECE · CGPA 8.51 · Class of 2029
                   </p>
                 </div>

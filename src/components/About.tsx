@@ -80,8 +80,15 @@ export const About: React.FC = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="lg:col-span-5 p-6 rounded-2xl bg-zinc-950 border border-zinc-800 relative corner-border overflow-hidden"
           >
-            <div className="font-mono text-xs text-zinc-500 mb-4 pb-2 border-b border-zinc-900 flex justify-between items-center">
-              <span>CORE_DISCIPLINES</span>
+            <div className="font-mono text-xs text-zinc-500 mb-4 pb-3 border-b border-zinc-900 flex justify-between items-center">
+              <div className="flex items-center gap-2.5">
+                <img
+                  src={PERSONAL_INFO.avatarUrl}
+                  alt={PERSONAL_INFO.name}
+                  className="w-7 h-7 rounded-full object-cover object-top border border-zinc-700"
+                />
+                <span>ENGINEER_ID // 2026</span>
+              </div>
               <span className="text-emerald-400 font-bold">5 PILLARS</span>
             </div>
 

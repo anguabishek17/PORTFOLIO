@@ -11,6 +11,7 @@ export const PERSONAL_INFO = {
   email: 'anguabishek183@gmail.com',
   phone: '+91 8220335091',
   resumeUrl: '/ANGU_ABISHEK_RESUME.pdf',
+  avatarUrl: '/profile.jpg',
   github: 'https://github.com/anguabishek17',
   linkedin: 'https://www.linkedin.com/in/angu-abishek-m-00748a311',
   tagline: 'Building intelligent systems, full-stack applications, and real-world engineering solutions at the intersection of AI and electronics.',
