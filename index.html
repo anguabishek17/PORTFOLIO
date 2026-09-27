@@ -15,8 +15,18 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+    
+    <!-- Preload critical profile photo for instantaneous fullscreen loader rendering -->
+    <link rel="preload" as="image" href="/profile.jpg" fetchpriority="high" />
+    <style>
+      html, body {
+        background-color: #050505;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
   </head>
-  <body class="bg-[#F6F5F0] text-[#17201D] selection:bg-[#174C3C] selection:text-white antialiased font-sans overflow-x-hidden">
+  <body class="bg-[#050505] text-[#17201D] selection:bg-[#174C3C] selection:text-white antialiased font-sans overflow-x-hidden">
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
