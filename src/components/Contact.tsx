@@ -13,29 +13,29 @@ export const Contact: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="py-28 relative z-10 border-b border-zinc-900 overflow-hidden">
-      {/* Ambient background light */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[350px] bg-white/[0.03] blur-[140px] rounded-full pointer-events-none" />
+    <section id="contact" className="py-28 relative z-10 border-b border-[#DDE1DC] bg-[#F6F5F0] overflow-hidden">
+      {/* Ambient background accent */}
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[350px] bg-[#174C3C]/10 blur-[140px] rounded-full pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         
-        {/* Cinematic Large CTA Container */}
-        <div className="p-8 sm:p-14 lg:p-20 rounded-3xl bg-zinc-950 border border-zinc-800 corner-border shadow-2xl space-y-12">
+        {/* Cinematic Large CTA Container - Dark Forest Green (#123C32) */}
+        <div className="p-8 sm:p-14 lg:p-20 rounded-3xl bg-[#123C32] border-2 border-[#174C3C] shadow-2xl space-y-12 text-white">
           
           <div className="space-y-6 max-w-3xl">
-            <div className="flex items-center gap-2 font-mono text-xs text-zinc-500 uppercase tracking-widest">
-              <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
+            <div className="flex items-center gap-2 font-mono text-xs text-[#DCE8E1] uppercase tracking-widest font-semibold">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#DCE8E1] animate-pulse" />
               <span>10 // DIRECT TRANSMISSION</span>
             </div>
 
             <h2 className="font-sans font-black text-4xl sm:text-6xl lg:text-7xl text-white tracking-tight leading-[0.95] uppercase">
               LET'S BUILD <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-zinc-200 to-zinc-500">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-[#DCE8E1] to-[#5F806F]">
                 SOMETHING.
               </span>
             </h2>
 
-            <p className="text-zinc-400 text-lg sm:text-xl font-normal max-w-xl leading-relaxed">
+            <p className="text-[#DCE8E1]/90 text-lg sm:text-xl font-normal max-w-xl leading-relaxed">
               Have an interesting idea, engineering problem, or collaboration in AI, software, or embedded systems?
             </p>
           </div>
@@ -44,28 +44,28 @@ export const Contact: React.FC = () => {
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 max-w-2xl">
             <a
               href={`mailto:${PERSONAL_INFO.email}`}
-              className="flex-1 flex items-center justify-between p-4 rounded-xl bg-zinc-900/80 border border-zinc-700/80 hover:border-white transition-all text-white font-mono text-sm sm:text-base group"
+              className="flex-1 flex items-center justify-between p-4 rounded-xl bg-[#174C3C]/80 border border-[#5F806F]/50 hover:border-white transition-all text-white font-mono text-sm sm:text-base group shadow-inner"
             >
               <div className="flex items-center gap-3 overflow-hidden">
-                <Mail size={18} className="text-zinc-400 group-hover:text-white transition-colors shrink-0" />
+                <Mail size={18} className="text-[#DCE8E1] group-hover:text-white transition-colors shrink-0" />
                 <span className="truncate">{PERSONAL_INFO.email}</span>
               </div>
-              <ArrowUpRight size={16} className="text-zinc-400 group-hover:text-white transition-colors shrink-0 ml-2" />
+              <ArrowUpRight size={16} className="text-[#DCE8E1] group-hover:text-white transition-colors shrink-0 ml-2" />
             </a>
 
             <button
               onClick={handleCopyEmail}
-              className="px-5 py-4 rounded-xl bg-zinc-900 border border-zinc-700 hover:border-zinc-500 text-xs font-mono font-medium text-white flex items-center justify-center gap-2 transition-all active:scale-95 shrink-0"
+              className="px-5 py-4 rounded-xl bg-[#174C3C] border border-[#5F806F]/60 hover:border-white text-xs font-mono font-medium text-white flex items-center justify-center gap-2 transition-all active:scale-95 shrink-0"
               title="Copy email to clipboard"
             >
               {copied ? (
                 <>
-                  <Check size={14} className="text-emerald-400" />
-                  <span className="text-emerald-400 font-bold">COPIED</span>
+                  <Check size={14} className="text-[#DCE8E1]" />
+                  <span className="text-[#DCE8E1] font-bold">COPIED</span>
                 </>
               ) : (
                 <>
-                  <Copy size={14} className="text-zinc-400" />
+                  <Copy size={14} className="text-[#DCE8E1]" />
                   <span>COPY EMAIL</span>
                 </>
               )}
@@ -73,10 +73,10 @@ export const Contact: React.FC = () => {
           </div>
 
           {/* Buttons Matrix */}
-          <div className="flex flex-wrap items-center gap-4 pt-4 border-t border-zinc-900">
+          <div className="flex flex-wrap items-center gap-4 pt-4 border-t border-[#174C3C]">
             <a
               href={`mailto:${PERSONAL_INFO.email}`}
-              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-lg bg-white text-black font-mono font-bold text-xs tracking-wider uppercase hover:bg-zinc-200 transition-all shadow-md active:scale-95"
+              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-lg bg-white text-[#123C32] font-mono font-black text-xs tracking-wider uppercase hover:bg-[#DCE8E1] transition-all shadow-md active:scale-95"
             >
               <Send size={14} />
               <span>EMAIL ME</span>
@@ -87,9 +87,9 @@ export const Contact: React.FC = () => {
               target="_blank"
               rel="noopener noreferrer"
               download="ANGU_ABISHEK_RESUME.pdf"
-              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-lg bg-zinc-900 border border-zinc-700/80 hover:border-white text-white font-mono font-medium text-xs tracking-wider uppercase transition-all hover:bg-zinc-800 shadow-sm"
+              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-lg bg-transparent border border-[#DCE8E1]/60 hover:border-white hover:bg-[#174C3C]/50 text-white font-mono font-medium text-xs tracking-wider uppercase transition-all shadow-sm"
             >
-              <ArrowUpRight size={14} className="text-zinc-400" />
+              <ArrowUpRight size={14} className="text-[#DCE8E1]" />
               <span>DOWNLOAD RESUME</span>
             </a>
 
@@ -97,29 +97,29 @@ export const Contact: React.FC = () => {
               href={PERSONAL_INFO.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-lg bg-zinc-900 border border-zinc-700/80 hover:border-white text-white font-mono font-medium text-xs tracking-wider uppercase transition-all hover:bg-zinc-800"
+              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-lg bg-transparent border border-[#DCE8E1]/40 hover:border-white text-white font-mono font-medium text-xs tracking-wider uppercase transition-all hover:bg-[#174C3C]/50"
             >
               <GithubIcon size={14} />
               <span>GITHUB</span>
-              <ArrowUpRight size={12} className="text-zinc-400" />
+              <ArrowUpRight size={12} className="text-[#DCE8E1]" />
             </a>
 
             <a
               href={PERSONAL_INFO.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-lg bg-zinc-900 border border-zinc-700/80 hover:border-white text-white font-mono font-medium text-xs tracking-wider uppercase transition-all hover:bg-zinc-800"
+              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-lg bg-transparent border border-[#DCE8E1]/40 hover:border-white text-white font-mono font-medium text-xs tracking-wider uppercase transition-all hover:bg-[#174C3C]/50"
             >
               <LinkedinIcon size={14} />
               <span>LINKEDIN</span>
-              <ArrowUpRight size={12} className="text-zinc-400" />
+              <ArrowUpRight size={12} className="text-[#DCE8E1]" />
             </a>
           </div>
 
           {/* Bottom Telemetry Status */}
-          <div className="pt-6 border-t border-zinc-900 flex flex-col sm:flex-row items-center justify-between gap-2 font-mono text-xs text-zinc-500">
+          <div className="pt-6 border-t border-[#174C3C] flex flex-col sm:flex-row items-center justify-between gap-2 font-mono text-xs text-[#DCE8E1]/80">
             <span className="flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-emerald-400" />
+              <span className="w-2 h-2 rounded-full bg-[#DCE8E1] animate-ping" />
               INBOX OPEN FOR INTERNSHIPS, R&D & HACKATHON COLLABORATION
             </span>
             <span>LOCATION: {PERSONAL_INFO.location}</span>

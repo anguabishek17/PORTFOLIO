@@ -5,21 +5,21 @@ import { ACHIEVEMENTS } from '../data/portfolioData';
 
 export const Achievements: React.FC = () => {
   return (
-    <section id="achievements" className="py-24 relative z-10 border-b border-zinc-900">
+    <section id="achievements" className="py-24 relative z-10 border-b border-[#DDE1DC] bg-white">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 pb-6 border-b border-zinc-900 gap-4">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 pb-6 border-b border-[#DDE1DC] gap-4">
           <div>
-            <div className="flex items-center gap-2 font-mono text-xs text-zinc-500 mb-2 uppercase tracking-widest">
-              <span className="w-1.5 h-1.5 rounded-full bg-white" />
+            <div className="flex items-center gap-2 font-mono text-xs text-[#174C3C] mb-2 uppercase tracking-widest font-semibold">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#174C3C]" />
               <span>08 // HONORS & RECOGNITIONS</span>
             </div>
-            <h2 className="font-sans font-black text-3xl sm:text-5xl text-white tracking-tight uppercase">
+            <h2 className="font-sans font-black text-3xl sm:text-5xl text-[#17201D] tracking-tight uppercase">
               ACHIEVEMENTS
             </h2>
           </div>
-          <p className="font-mono text-xs text-zinc-400 max-w-sm">
+          <p className="font-mono text-xs text-[#59635E] max-w-sm">
             VALIDATED COMPETITIVE ENGINEERING & INTELLECTUAL MILESTONES.
           </p>
         </div>
@@ -37,8 +37,8 @@ export const Achievements: React.FC = () => {
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
                 className={`p-6 md:p-8 rounded-2xl flex flex-col justify-between transition-all duration-300 ${
                   isPatent
-                    ? 'bg-zinc-950 border-2 border-white/80 shadow-2xl corner-border md:col-span-1'
-                    : 'bg-zinc-950 border border-zinc-800 hover:border-zinc-700'
+                    ? 'bg-[#123C32] text-white border-2 border-[#174C3C] shadow-xl md:col-span-1'
+                    : 'bg-[#F6F5F0] border border-[#DDE1DC] hover:border-[#5F806F] hover:bg-white shadow-sm hover:shadow-md'
                 }`}
               >
                 <div className="space-y-4">
@@ -46,44 +46,56 @@ export const Achievements: React.FC = () => {
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2">
                       {isPatent ? (
-                        <div className="p-2 rounded-lg bg-white text-black">
+                        <div className="p-2 rounded-lg bg-[#DCE8E1] text-[#123C32]">
                           <FileCheck size={18} />
                         </div>
                       ) : (
-                        <div className="p-2 rounded-lg bg-zinc-900 border border-zinc-800 text-white">
+                        <div className="p-2 rounded-lg bg-[#DCE8E1]/60 border border-[#DDE1DC] text-[#174C3C]">
                           <Trophy size={18} />
                         </div>
                       )}
-                      <span className="font-mono text-xs font-bold text-zinc-400">
+                      <span className={`font-mono text-xs font-bold ${isPatent ? 'text-[#DCE8E1]' : 'text-[#5F806F]'}`}>
                         {item.category}
                       </span>
                     </div>
-                    <span className="font-mono text-xs text-zinc-500 px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800">
+                    <span className={`font-mono text-xs px-2 py-0.5 rounded border ${
+                      isPatent
+                        ? 'bg-[#174C3C] border-[#5F806F] text-white'
+                        : 'bg-white border-[#DDE1DC] text-[#174C3C] font-semibold'
+                    }`}>
                       {item.year}
                     </span>
                   </div>
 
-                  <h3 className="font-sans font-black text-xl sm:text-2xl text-white tracking-tight leading-snug">
+                  <h3 className={`font-sans font-black text-xl sm:text-2xl tracking-tight leading-snug ${
+                    isPatent ? 'text-white' : 'text-[#17201D]'
+                  }`}>
                     {item.title}
                   </h3>
 
-                  <p className="font-mono text-xs font-medium text-zinc-300">
+                  <p className={`font-mono text-xs font-medium ${
+                    isPatent ? 'text-[#DCE8E1]' : 'text-[#174C3C]'
+                  }`}>
                     {item.summary}
                   </p>
 
                   {item.details && (
-                    <p className="text-xs text-zinc-400 leading-relaxed font-sans">
+                    <p className={`text-xs leading-relaxed font-sans ${
+                      isPatent ? 'text-[#ECEBE5]/80' : 'text-[#59635E]'
+                    }`}>
                       {item.details}
                     </p>
                   )}
                 </div>
 
-                <div className="mt-8 pt-4 border-t border-zinc-900 flex items-center justify-between text-[11px] font-mono text-zinc-500">
-                  <span className="flex items-center gap-1.5">
-                    <Shield size={12} className={isPatent ? 'text-white' : 'text-zinc-500'} />
+                <div className={`mt-8 pt-4 border-t flex items-center justify-between text-[11px] font-mono ${
+                  isPatent ? 'border-[#174C3C] text-[#DCE8E1]' : 'border-[#DDE1DC] text-[#59635E]'
+                }`}>
+                  <span className="flex items-center gap-1.5 font-medium">
+                    <Shield size={12} className={isPatent ? 'text-[#DCE8E1]' : 'text-[#174C3C]'} />
                     {item.organization}
                   </span>
-                  <span className="text-zinc-400 font-bold">VERIFIED</span>
+                  <span className={`font-bold ${isPatent ? 'text-white' : 'text-[#174C3C]'}`}>VERIFIED</span>
                 </div>
               </motion.div>
             );

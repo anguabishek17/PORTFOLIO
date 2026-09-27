@@ -34,7 +34,7 @@ export const CustomCursor: React.FC = () => {
 
       if (projectCard) {
         setCursorVariant('project');
-        setCursorText('VIEW');
+        setCursorText('VIEW →');
       } else if (interactiveEl) {
         setCursorVariant('link');
         setCursorText('');
@@ -62,31 +62,28 @@ export const CustomCursor: React.FC = () => {
   if (isTouchDevice) return null;
 
   return (
-    <>
-      {/* Primary smooth trailing ring / follower */}
-      <motion.div
-        className="pointer-events-none fixed top-0 left-0 z-50 flex items-center justify-center rounded-full mix-blend-difference"
-        style={{
-          x: cursorX,
-          y: cursorY,
-          translateX: '-50%',
-          translateY: '-50%',
-        }}
-        animate={{
-          width: cursorVariant === 'project' ? 68 : cursorVariant === 'link' ? 38 : 12,
-          height: cursorVariant === 'project' ? 68 : cursorVariant === 'link' ? 38 : 12,
-          backgroundColor: cursorVariant === 'default' ? '#ffffff' : cursorVariant === 'project' ? '#ffffff' : 'transparent',
-          border: cursorVariant === 'link' ? '1.5px solid #ffffff' : 'none',
-          opacity: cursorVariant === 'hidden' ? 0 : 1,
-        }}
-        transition={{ type: 'spring', damping: 25, stiffness: 350, mass: 0.4 }}
-      >
-        {cursorVariant === 'project' && (
-          <span className="text-[10px] font-mono font-bold tracking-widest text-black select-none">
-            {cursorText}
-          </span>
-        )}
-      </motion.div>
-    </>
+    <motion.div
+      className="pointer-events-none fixed top-0 left-0 z-40 flex items-center justify-center rounded-full"
+      style={{
+        x: cursorX,
+        y: cursorY,
+        translateX: '-50%',
+        translateY: '-50%',
+      }}
+      animate={{
+        width: cursorVariant === 'project' ? 76 : cursorVariant === 'link' ? 36 : 10,
+        height: cursorVariant === 'project' ? 76 : cursorVariant === 'link' ? 36 : 10,
+        backgroundColor: cursorVariant === 'default' ? '#174C3C' : cursorVariant === 'project' ? '#174C3C' : 'transparent',
+        border: cursorVariant === 'link' ? '1.5px solid #174C3C' : 'none',
+        opacity: cursorVariant === 'hidden' ? 0 : 0.9,
+      }}
+      transition={{ type: 'spring', damping: 25, stiffness: 350, mass: 0.4 }}
+    >
+      {cursorVariant === 'project' && (
+        <span className="text-[10px] font-mono font-bold tracking-wider text-white select-none">
+          {cursorText}
+        </span>
+      )}
+    </motion.div>
   );
 };

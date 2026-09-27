@@ -22,8 +22,8 @@ export const TechGridBackground: React.FC = () => {
 
     window.addEventListener('resize', handleResize);
 
-    // Subtle floating nodes/particles for high-tech ambiance
-    const particleCount = Math.min(Math.floor(width / 50), 30);
+    // Subtle floating green/gray nodes for engineering background
+    const particleCount = Math.min(Math.floor(width / 60), 25);
     const particles: Array<{
       x: number;
       y: number;
@@ -31,18 +31,16 @@ export const TechGridBackground: React.FC = () => {
       vy: number;
       size: number;
       alpha: number;
-      pulseSpeed: number;
     }> = [];
 
     for (let i = 0; i < particleCount; i++) {
       particles.push({
         x: Math.random() * width,
         y: Math.random() * height,
-        vx: (Math.random() - 0.5) * 0.2,
-        vy: (Math.random() - 0.5) * 0.2,
+        vx: (Math.random() - 0.5) * 0.15,
+        vy: (Math.random() - 0.5) * 0.15,
         size: Math.random() * 1.5 + 0.8,
-        alpha: Math.random() * 0.4 + 0.1,
-        pulseSpeed: Math.random() * 0.015 + 0.005,
+        alpha: Math.random() * 0.3 + 0.1,
       });
     }
 
@@ -52,7 +50,6 @@ export const TechGridBackground: React.FC = () => {
       time += 0.02;
       ctx.clearRect(0, 0, width, height);
 
-      // Render ultra-subtle particles
       for (let i = 0; i < particles.length; i++) {
         const p = particles[i];
         p.x += p.vx;
@@ -65,7 +62,7 @@ export const TechGridBackground: React.FC = () => {
 
         const currentAlpha = p.alpha * (0.6 + 0.4 * Math.sin(time * 2 + i));
 
-        ctx.fillStyle = `rgba(255, 255, 255, ${currentAlpha})`;
+        ctx.fillStyle = `rgba(23, 76, 60, ${currentAlpha * 0.4})`;
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
         ctx.fill();
@@ -83,30 +80,27 @@ export const TechGridBackground: React.FC = () => {
   }, []);
 
   return (
-    <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
-      {/* Precision tech grid */}
-      <div className="absolute inset-0 tech-grid opacity-30" />
+    <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden bg-[#F6F5F0]">
+      {/* Precision Ivory / Green tech grid */}
+      <div className="absolute inset-0 tech-grid-light opacity-80" />
       
       {/* Fine micro-dot texture */}
-      <div className="absolute inset-0 tech-dots opacity-20" />
-      
-      {/* Ambient center spotlight */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-gradient-to-b from-white/[0.04] via-white/[0.01] to-transparent blur-3xl pointer-events-none" />
+      <div className="absolute inset-0 tech-dots-light opacity-60" />
 
       {/* Canvas for micro-particles */}
       <canvas ref={canvasRef} className="absolute inset-0 w-full h-full opacity-60" />
 
       {/* Subtle coordinate watermark / technical telemetry */}
-      <div className="hidden lg:flex fixed bottom-6 left-6 flex-col font-mono text-[10px] text-zinc-600 tracking-wider space-y-1 select-none pointer-events-none z-10">
+      <div className="hidden lg:flex fixed bottom-6 left-6 flex-col font-mono text-[10px] text-[#59635E] tracking-wider space-y-1 select-none pointer-events-none z-10">
         <span className="flex items-center gap-1.5">
-          <span className="inline-block w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+          <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#174C3C] animate-pulse" />
           SYSTEM_ONLINE // ECE-AI_CORE
         </span>
-        <span className="text-zinc-700">12.7409° N · 77.8253° E // HOSUR_IN</span>
+        <span className="text-[#8A938E]">12.7409° N · 77.8253° E // HOSUR_IN</span>
       </div>
 
-      <div className="hidden lg:block fixed bottom-6 right-6 font-mono text-[10px] text-zinc-700 tracking-wider select-none pointer-events-none z-10">
-        ANGU_PORTFOLIO_V2.6 // PROD
+      <div className="hidden lg:block fixed bottom-6 right-6 font-mono text-[10px] text-[#8A938E] tracking-wider select-none pointer-events-none z-10">
+        ANGU_PORTFOLIO // V2.6
       </div>
     </div>
   );

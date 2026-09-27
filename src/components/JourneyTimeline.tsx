@@ -5,21 +5,21 @@ import { TIMELINE_EVENTS } from '../data/portfolioData';
 
 export const JourneyTimeline: React.FC = () => {
   return (
-    <section id="journey" className="py-24 relative z-10 border-b border-zinc-900">
+    <section id="journey" className="py-24 relative z-10 border-b border-[#DDE1DC] bg-[#F6F5F0]">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 pb-6 border-b border-zinc-900 gap-4">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 pb-6 border-b border-[#DDE1DC] gap-4">
           <div>
-            <div className="flex items-center gap-2 font-mono text-xs text-zinc-500 mb-2 uppercase tracking-widest">
-              <span className="w-1.5 h-1.5 rounded-full bg-white" />
+            <div className="flex items-center gap-2 font-mono text-xs text-[#174C3C] mb-2 uppercase tracking-widest font-semibold">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#174C3C]" />
               <span>07 // EVOLUTION & MILESTONES</span>
             </div>
-            <h2 className="font-sans font-black text-3xl sm:text-5xl text-white tracking-tight uppercase">
+            <h2 className="font-sans font-black text-3xl sm:text-5xl text-[#17201D] tracking-tight uppercase">
               MY JOURNEY
             </h2>
           </div>
-          <p className="font-mono text-xs text-zinc-400 max-w-sm">
+          <p className="font-mono text-xs text-[#59635E] max-w-sm">
             CHRONOLOGICAL ACCELERATION FROM CLASSROOM TO PATENTS & HACKATHONS.
           </p>
         </div>
@@ -34,38 +34,38 @@ export const JourneyTimeline: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.5, delay: idx * 0.08 }}
-                className="p-6 rounded-2xl bg-zinc-950 border border-zinc-800/90 hover:border-zinc-600 transition-all duration-300 flex flex-col justify-between group"
+                className="p-6 rounded-2xl bg-white border border-[#DDE1DC] hover:border-[#174C3C] shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between group"
               >
                 <div>
-                  <div className="flex items-center justify-between pb-3 mb-3 border-b border-zinc-900">
-                    <span className="font-mono text-sm font-black text-white px-2.5 py-0.5 rounded bg-zinc-900 border border-zinc-800">
+                  <div className="flex items-center justify-between pb-3 mb-3 border-b border-[#DDE1DC]">
+                    <span className="font-mono text-sm font-black text-[#174C3C] px-2.5 py-0.5 rounded bg-[#DCE8E1]/60 border border-[#DDE1DC]">
                       {event.year} {event.month ? `· ${event.month}` : ''}
                     </span>
-                    <span className="font-mono text-[10px] text-zinc-500 uppercase">
+                    <span className="font-mono text-[10px] text-[#5F806F] uppercase font-semibold">
                       {event.type}
                     </span>
                   </div>
 
-                  <h3 className="font-sans font-bold text-lg text-white mb-1 group-hover:text-zinc-100 transition-colors">
+                  <h3 className="font-sans font-bold text-lg text-[#17201D] mb-1 group-hover:text-[#174C3C] transition-colors">
                     {event.title}
                   </h3>
 
                   {event.subtitle && (
-                    <p className="font-mono text-xs text-zinc-400 mb-3">
+                    <p className="font-mono text-xs text-[#5F806F] mb-3 font-medium">
                       {event.subtitle}
                     </p>
                   )}
 
                   {event.description && (
-                    <p className="text-xs text-zinc-400 leading-relaxed font-sans">
+                    <p className="text-xs text-[#59635E] leading-relaxed font-sans">
                       {event.description}
                     </p>
                   )}
                 </div>
 
-                <div className="mt-6 pt-3 border-t border-zinc-900 flex items-center justify-between font-mono text-[10px] text-zinc-600">
+                <div className="mt-6 pt-3 border-t border-[#ECEBE5] flex items-center justify-between font-mono text-[10px] text-[#8A938E]">
                   <span>STEP 0{idx + 1}</span>
-                  <ChevronRight size={13} className="text-zinc-500 group-hover:translate-x-1 transition-transform" />
+                  <ChevronRight size={13} className="text-[#5F806F] group-hover:text-[#174C3C] group-hover:translate-x-1 transition-all" />
                 </div>
               </motion.div>
             ))}

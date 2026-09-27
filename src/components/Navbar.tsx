@@ -24,8 +24,7 @@ export const Navbar: React.FC = () => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 40);
 
-      // Determine active section
-      const sections = NAV_LINKS.map(link => link.href.substring(1));
+      const sections = NAV_LINKS.filter(l => !l.isExternal).map(link => link.href.substring(1));
       const currentPos = window.scrollY + 200;
 
       for (let i = sections.length - 1; i >= 0; i--) {
@@ -59,7 +58,7 @@ export const Navbar: React.FC = () => {
       <header
         className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
           scrolled
-            ? 'py-3.5 bg-black/70 backdrop-blur-xl border-b border-white/[0.08] shadow-2xl shadow-black/80'
+            ? 'py-3.5 bg-white/85 backdrop-blur-xl border-b border-[#DDE1DC] shadow-sm'
             : 'py-6 bg-transparent'
         }`}
       >
@@ -70,24 +69,23 @@ export const Navbar: React.FC = () => {
             onClick={(e) => handleNavClick(e, { name: 'Home', href: '#home' })}
             className="group flex items-center gap-2.5 focus:outline-none"
           >
-            <div className="relative flex items-center justify-center w-9 h-9 rounded-lg bg-zinc-900 border border-zinc-700/80 group-hover:border-white transition-all duration-300">
+            <div className="relative flex items-center justify-center w-9 h-9 rounded-lg bg-[#123C32] border border-[#174C3C] group-hover:bg-[#174C3C] transition-all duration-300 shadow-sm">
               <span className="font-mono text-sm font-black tracking-tighter text-white group-hover:scale-105 transition-transform">
                 A
               </span>
-              <span className="absolute -top-1 -right-1 w-2 h-2 rounded-full bg-white opacity-0 group-hover:opacity-100 transition-opacity" />
             </div>
             <div className="flex flex-col">
-              <span className="font-bold tracking-widest text-sm text-white group-hover:text-zinc-200 transition-colors">
+              <span className="font-bold tracking-widest text-sm text-[#123C32] group-hover:text-[#174C3C] transition-colors">
                 {PERSONAL_INFO.monogram}
               </span>
-              <span className="font-mono text-[9px] text-zinc-500 uppercase tracking-wider hidden sm:block">
+              <span className="font-mono text-[9px] text-[#59635E] uppercase tracking-wider hidden sm:block">
                 ECE · AI DEV
               </span>
             </div>
           </a>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-1 rounded-full bg-zinc-950/80 border border-white/[0.08] px-3 py-1.5 shadow-inner">
+          <nav className="hidden lg:flex items-center gap-1 rounded-full bg-white/90 border border-[#DDE1DC] px-3 py-1.5 shadow-sm">
             {NAV_LINKS.map((link) => {
               const isActive = activeSection === link.href.substring(1);
               return (
@@ -100,14 +98,14 @@ export const Navbar: React.FC = () => {
                   onClick={(e) => handleNavClick(e, link)}
                   className={`relative px-3.5 py-1.5 rounded-full text-xs font-medium tracking-wide transition-all duration-200 ${
                     isActive
-                      ? 'text-white'
-                      : 'text-zinc-400 hover:text-white'
+                      ? 'text-[#123C32] font-semibold'
+                      : 'text-[#59635E] hover:text-[#174C3C]'
                   }`}
                 >
                   {isActive && (
                     <motion.div
                       layoutId="activePill"
-                      className="absolute inset-0 bg-zinc-800/90 border border-zinc-700/60 rounded-full"
+                      className="absolute inset-0 bg-[#DCE8E1]/70 border border-[#174C3C]/20 rounded-full"
                       transition={{ type: 'spring', stiffness: 400, damping: 30 }}
                     />
                   )}
@@ -123,7 +121,7 @@ export const Navbar: React.FC = () => {
               href={PERSONAL_INFO.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center w-9 h-9 rounded-lg bg-zinc-900/80 border border-zinc-800 text-zinc-400 hover:text-white hover:border-zinc-600 transition-all"
+              className="flex items-center justify-center w-9 h-9 rounded-lg bg-white border border-[#DDE1DC] text-[#59635E] hover:text-[#174C3C] hover:border-[#174C3C] transition-all shadow-sm"
               aria-label="GitHub Profile"
             >
               <GithubIcon size={16} />
@@ -132,7 +130,7 @@ export const Navbar: React.FC = () => {
               href={PERSONAL_INFO.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center w-9 h-9 rounded-lg bg-zinc-900/80 border border-zinc-800 text-zinc-400 hover:text-white hover:border-zinc-600 transition-all"
+              className="flex items-center justify-center w-9 h-9 rounded-lg bg-white border border-[#DDE1DC] text-[#59635E] hover:text-[#174C3C] hover:border-[#174C3C] transition-all shadow-sm"
               aria-label="LinkedIn Profile"
             >
               <LinkedinIcon size={16} />
@@ -141,7 +139,7 @@ export const Navbar: React.FC = () => {
             <a
               href="#contact"
               onClick={(e) => handleNavClick(e, { name: 'Contact', href: '#contact' })}
-              className="hidden md:flex items-center gap-1.5 text-xs font-mono font-medium px-4 py-2 rounded-lg bg-white text-black hover:bg-zinc-200 transition-all shadow-sm"
+              className="hidden md:flex items-center gap-1.5 text-xs font-mono font-medium px-4 py-2 rounded-lg bg-[#174C3C] hover:bg-[#123C32] text-white transition-all shadow-sm"
             >
               <span>CONNECT</span>
               <ArrowUpRight size={13} />
@@ -151,7 +149,7 @@ export const Navbar: React.FC = () => {
           {/* Mobile Menu Toggle */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden flex items-center justify-center w-10 h-10 rounded-lg bg-zinc-900 border border-zinc-800 text-zinc-300 hover:text-white"
+            className="lg:hidden flex items-center justify-center w-10 h-10 rounded-lg bg-white border border-[#DDE1DC] text-[#123C32] hover:text-[#174C3C]"
             aria-label="Toggle navigation menu"
           >
             {mobileMenuOpen ? <X size={18} /> : <Menu size={18} />}
@@ -167,11 +165,11 @@ export const Navbar: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3, ease: 'easeOut' }}
-            className="fixed inset-0 z-30 bg-black/95 backdrop-blur-2xl lg:hidden flex flex-col justify-between pt-24 pb-10 px-8"
+            className="fixed inset-0 z-30 bg-[#F6F5F0]/98 backdrop-blur-2xl lg:hidden flex flex-col justify-between pt-24 pb-10 px-8"
           >
             <div className="flex flex-col space-y-4">
-              <div className="flex items-center gap-2 pb-4 border-b border-zinc-800 font-mono text-xs text-zinc-500">
-                <Terminal size={14} className="text-emerald-400" />
+              <div className="flex items-center gap-2 pb-4 border-b border-[#DDE1DC] font-mono text-xs text-[#59635E]">
+                <Terminal size={14} className="text-[#174C3C]" />
                 <span>NAVIGATION // MENU</span>
               </div>
 
@@ -189,25 +187,25 @@ export const Navbar: React.FC = () => {
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: idx * 0.05 + 0.1 }}
                       onClick={(e) => handleNavClick(e, link)}
-                      className={`text-2xl font-bold py-2.5 flex items-center justify-between border-b border-zinc-900 ${
-                        isActive ? 'text-white' : 'text-zinc-500 hover:text-zinc-200'
+                      className={`text-2xl font-bold py-2.5 flex items-center justify-between border-b border-[#DDE1DC] ${
+                        isActive ? 'text-[#123C32]' : 'text-[#59635E] hover:text-[#174C3C]'
                       }`}
                     >
                       <span>{link.name}</span>
-                      <span className="font-mono text-xs text-zinc-600">0{idx + 1}</span>
+                      <span className="font-mono text-xs text-[#8A938E]">0{idx + 1}</span>
                     </motion.a>
                   );
                 })}
               </div>
             </div>
 
-            <div className="space-y-4 pt-6 border-t border-zinc-900">
+            <div className="space-y-4 pt-6 border-t border-[#DDE1DC]">
               <div className="flex items-center gap-4">
                 <a
                   href={PERSONAL_INFO.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1 flex items-center justify-center gap-2 py-3 rounded-lg bg-zinc-900 border border-zinc-800 text-sm font-medium text-white"
+                  className="flex-1 flex items-center justify-center gap-2 py-3 rounded-lg bg-white border border-[#DDE1DC] text-sm font-medium text-[#17201D]"
                 >
                   <GithubIcon size={16} />
                   <span>GitHub</span>
@@ -216,13 +214,13 @@ export const Navbar: React.FC = () => {
                   href={PERSONAL_INFO.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1 flex items-center justify-center gap-2 py-3 rounded-lg bg-zinc-900 border border-zinc-800 text-sm font-medium text-white"
+                  className="flex-1 flex items-center justify-center gap-2 py-3 rounded-lg bg-white border border-[#DDE1DC] text-sm font-medium text-[#17201D]"
                 >
                   <LinkedinIcon size={16} />
                   <span>LinkedIn</span>
                 </a>
               </div>
-              <p className="text-center font-mono text-[11px] text-zinc-600">
+              <p className="text-center font-mono text-[11px] text-[#59635E]">
                 ANGU ABISHEK M · {PERSONAL_INFO.location}
               </p>
             </div>

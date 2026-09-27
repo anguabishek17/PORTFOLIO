@@ -14,7 +14,6 @@ export const Projects: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState('ALL');
   const [activeModalProject, setActiveModalProject] = useState<Project | null>(null);
 
-  // Close modal on Escape key press
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
@@ -30,21 +29,21 @@ export const Projects: React.FC = () => {
     : PROJECTS.filter((p) => p.category === selectedCategory);
 
   return (
-    <section id="projects" className="py-24 relative z-10 border-b border-zinc-900">
+    <section id="projects" className="py-24 relative z-10 border-b border-[#DDE1DC] bg-[#F6F5F0]">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 pb-6 border-b border-zinc-900 gap-4">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 pb-6 border-b border-[#DDE1DC] gap-4">
           <div>
-            <div className="flex items-center gap-2 font-mono text-xs text-zinc-500 mb-2 uppercase tracking-widest">
-              <span className="w-1.5 h-1.5 rounded-full bg-white" />
-              <span>03 // PORTFOLIO ARCHIVES</span>
+            <div className="flex items-center gap-2 font-mono text-xs text-[#174C3C] mb-2 uppercase tracking-widest font-semibold">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#174C3C]" />
+              <span>03 // SELECTED WORK</span>
             </div>
-            <h2 className="font-sans font-black text-3xl sm:text-5xl text-white tracking-tight uppercase">
+            <h2 className="font-sans font-black text-3xl sm:text-5xl text-[#17201D] tracking-tight uppercase">
               SELECTED WORK
             </h2>
           </div>
-          <p className="font-mono text-xs text-zinc-400 max-w-sm">
+          <p className="font-mono text-xs text-[#59635E] max-w-sm">
             ENGINEERING INTELLIGENT SYSTEMS FOR REAL-WORLD PROBLEMS.
           </p>
         </div>
@@ -57,8 +56,8 @@ export const Projects: React.FC = () => {
               onClick={() => setSelectedCategory(cat)}
               className={`px-3.5 py-1.5 rounded-lg font-mono text-xs font-medium transition-all ${
                 selectedCategory === cat
-                  ? 'bg-white text-black font-bold shadow-md'
-                  : 'bg-zinc-950 text-zinc-400 hover:text-white border border-zinc-800/80 hover:border-zinc-700'
+                  ? 'bg-[#174C3C] text-white font-bold shadow-sm'
+                  : 'bg-white text-[#59635E] hover:text-[#174C3C] border border-[#DDE1DC]'
               }`}
             >
               {cat}
@@ -82,15 +81,15 @@ export const Projects: React.FC = () => {
                 transition={{ duration: 0.5, delay: index * 0.05 }}
                 data-cursor="project"
                 onClick={() => setActiveModalProject(project)}
-                className={`${colSpan} group relative rounded-2xl bg-zinc-950 border border-zinc-800/90 hover:border-zinc-500 transition-all duration-300 overflow-hidden flex flex-col justify-between corner-border shadow-2xl cursor-pointer`}
+                className={`${colSpan} group relative rounded-2xl bg-white border border-[#DDE1DC] hover:border-[#5F806F] hover:-translate-y-1.5 transition-all duration-300 overflow-hidden flex flex-col justify-between corner-border-light shadow-sm hover:shadow-md cursor-pointer`}
               >
                 {/* Project Header Bar */}
-                <div className="p-6 pb-4 border-b border-zinc-900/90 flex flex-wrap items-center justify-between gap-3">
+                <div className="p-6 pb-4 border-b border-[#DDE1DC] flex flex-wrap items-center justify-between gap-3 bg-[#F6F5F0]/40">
                   <div className="flex items-center gap-3">
-                    <span className="font-mono text-xs font-black px-2.5 py-1 rounded bg-zinc-900 border border-zinc-800 text-white">
+                    <span className="font-mono text-xs font-black px-2.5 py-1 rounded bg-[#DCE8E1] border border-[#174C3C]/20 text-[#123C32]">
                       PROJECT {project.number}
                     </span>
-                    <span className="font-mono text-xs text-zinc-500">
+                    <span className="font-mono text-xs text-[#5F806F] font-semibold">
                       // {project.category.toUpperCase()}
                     </span>
                   </div>
@@ -101,7 +100,7 @@ export const Projects: React.FC = () => {
                         href={project.githubUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-zinc-900/90 hover:bg-zinc-800 border border-zinc-700/80 text-xs font-mono text-zinc-200 hover:text-white transition-colors"
+                        className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-[#F6F5F0] hover:bg-[#DCE8E1] border border-[#DDE1DC] text-xs font-mono text-[#17201D] hover:text-[#174C3C] transition-colors"
                         onClick={(e) => e.stopPropagation()}
                         aria-label={`GitHub repository for ${project.title}`}
                       >
@@ -114,7 +113,7 @@ export const Projects: React.FC = () => {
                         href={project.liveUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-white hover:bg-zinc-200 text-black text-xs font-mono font-semibold transition-colors"
+                        className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-[#174C3C] hover:bg-[#123C32] text-white text-xs font-mono font-semibold transition-colors shadow-sm"
                         onClick={(e) => e.stopPropagation()}
                         aria-label={`Live demo for ${project.title}`}
                       >
@@ -129,34 +128,34 @@ export const Projects: React.FC = () => {
                 <div className="p-6 md:p-8 flex-1 flex flex-col justify-between">
                   <div className="space-y-4">
                     <div>
-                      <h3 className="font-sans font-extrabold text-2xl sm:text-3xl text-white tracking-tight group-hover:text-zinc-100 transition-colors">
+                      <h3 className="font-sans font-extrabold text-2xl sm:text-3xl text-[#17201D] tracking-tight group-hover:text-[#174C3C] transition-colors">
                         {project.displayName || project.title}
                       </h3>
-                      <p className="font-mono text-xs text-zinc-400 mt-1">
+                      <p className="font-mono text-xs text-[#5F806F] mt-1 font-semibold">
                         {project.tagline}
                       </p>
                     </div>
 
-                    <p className="text-zinc-300 text-sm sm:text-base leading-relaxed font-normal">
+                    <p className="text-[#59635E] text-sm sm:text-base leading-relaxed font-normal">
                       {project.description}
                     </p>
 
                     {/* Technical Visual Widget for SPAMSENSE AI */}
                     {project.id === 'spamsense-ai' && (
-                      <div className="p-4 rounded-xl bg-zinc-900/60 border border-zinc-800/90 font-mono text-xs text-zinc-300 space-y-3">
-                        <div className="flex items-center justify-between text-[11px] text-zinc-500 pb-2 border-b border-zinc-800">
-                          <span className="flex items-center gap-1.5 text-zinc-400">
-                            <Mail size={13} className="text-zinc-300" />
+                      <div className="p-4 rounded-xl bg-[#F6F5F0] border border-[#DDE1DC] font-mono text-xs text-[#17201D] space-y-3">
+                        <div className="flex items-center justify-between text-[11px] text-[#59635E] pb-2 border-b border-[#DDE1DC]">
+                          <span className="flex items-center gap-1.5 text-[#123C32] font-semibold">
+                            <Mail size={13} className="text-[#174C3C]" />
                             AGENTIC_EMAIL_PIPELINE
                           </span>
-                          <span className="text-emerald-400 font-bold">8 ACTIVE AGENTS</span>
+                          <span className="text-[#174C3C] font-bold">8 ACTIVE AGENTS</span>
                         </div>
                         <div className="flex items-center justify-between gap-1 text-[10px] text-center font-mono">
-                          <div className="p-1.5 rounded bg-zinc-950 border border-zinc-800 flex-1">GMAIL</div>
-                          <span className="text-zinc-600">→</span>
-                          <div className="p-1.5 rounded bg-zinc-950 border border-zinc-800 flex-1">AI AGENTS</div>
-                          <span className="text-zinc-600">→</span>
-                          <div className="p-1.5 rounded bg-zinc-950 border border-zinc-700 text-white font-bold flex-1">SPAM/HAM</div>
+                          <div className="p-1.5 rounded bg-white border border-[#DDE1DC] flex-1">GMAIL</div>
+                          <span className="text-[#8A938E]">→</span>
+                          <div className="p-1.5 rounded bg-white border border-[#DDE1DC] flex-1">AI AGENTS</div>
+                          <span className="text-[#8A938E]">→</span>
+                          <div className="p-1.5 rounded bg-[#DCE8E1] border border-[#174C3C]/30 text-[#123C32] font-bold flex-1">SPAM/HAM</div>
                         </div>
                       </div>
                     )}
@@ -164,14 +163,14 @@ export const Projects: React.FC = () => {
                     {/* Architecture / Key Innovations Highlights */}
                     {project.architectureHighlights && project.architectureHighlights.length > 0 && (
                       <div className="pt-2">
-                        <div className="text-[11px] font-mono text-zinc-500 uppercase tracking-wider mb-2 flex items-center gap-1.5">
-                          <Binary size={12} className="text-zinc-400" />
+                        <div className="text-[11px] font-mono text-[#5F806F] uppercase tracking-wider mb-2 flex items-center gap-1.5 font-semibold">
+                          <Binary size={12} className="text-[#174C3C]" />
                           <span>Key Architecture Innovations:</span>
                         </div>
                         <ul className="space-y-1.5">
                           {project.architectureHighlights.map((highlight, hIdx) => (
-                            <li key={hIdx} className="flex items-start gap-2 text-xs text-zinc-400 font-sans">
-                              <span className="w-1.5 h-1.5 rounded-full bg-zinc-600 mt-1.5 shrink-0" />
+                            <li key={hIdx} className="flex items-start gap-2 text-xs text-[#59635E] font-sans">
+                              <span className="w-1.5 h-1.5 rounded-full bg-[#174C3C] mt-1.5 shrink-0" />
                               <span>{highlight}</span>
                             </li>
                           ))}
@@ -185,9 +184,9 @@ export const Projects: React.FC = () => {
                         {project.metrics.map((metric, mIdx) => (
                           <span
                             key={mIdx}
-                            className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-zinc-900 border border-zinc-800 text-[11px] font-mono text-zinc-300"
+                            className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-[#ECEBE5] border border-[#DDE1DC] text-[11px] font-mono text-[#315C50] font-medium"
                           >
-                            <ShieldCheck size={11} className="text-zinc-400" />
+                            <ShieldCheck size={11} className="text-[#174C3C]" />
                             {metric}
                           </span>
                         ))}
@@ -196,15 +195,15 @@ export const Projects: React.FC = () => {
                   </div>
 
                   {/* Technologies Tags Container */}
-                  <div className="mt-8 pt-6 border-t border-zinc-900/90">
-                    <div className="text-[10px] font-mono text-zinc-600 uppercase tracking-wider mb-2.5">
+                  <div className="mt-8 pt-6 border-t border-[#DDE1DC]">
+                    <div className="text-[10px] font-mono text-[#8A938E] uppercase tracking-wider mb-2.5 font-semibold">
                       TECH_STACK // IMPLEMENTATION
                     </div>
                     <div className="flex flex-wrap gap-1.5">
                       {project.technologies.map((tech) => (
                         <span
                           key={tech}
-                          className="px-2.5 py-1 rounded bg-zinc-900/80 border border-zinc-800 text-[11px] font-mono text-zinc-400 group-hover:border-zinc-700 transition-colors"
+                          className="px-2.5 py-1 rounded bg-[#ECEBE5] border border-[#DDE1DC] text-[11px] font-mono text-[#315C50] font-medium group-hover:border-[#5F806F]/50 transition-colors"
                         >
                           {tech}
                         </span>
@@ -214,13 +213,13 @@ export const Projects: React.FC = () => {
                 </div>
 
                 {/* Bottom Interactive Hover Indicator */}
-                <div className="px-6 py-3 bg-zinc-950 border-t border-zinc-900 flex items-center justify-between text-xs font-mono text-zinc-500">
+                <div className="px-6 py-3 bg-[#F6F5F0]/60 border-t border-[#DDE1DC] flex items-center justify-between text-xs font-mono text-[#59635E]">
                   <div className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
-                    <span>CLICK FOR ARCHITECTURE & DETAILS</span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#174C3C]" />
+                    <span>VERIFIED PRODUCTION REPO</span>
                   </div>
-                  <div className="inline-flex items-center gap-1 text-white group-hover:text-zinc-300 font-semibold transition-colors">
-                    <span>EXPLORE →</span>
+                  <div className="inline-flex items-center gap-1 text-[#174C3C] font-semibold group-hover:translate-x-1 transition-transform">
+                    <span>EXPLORE DETAILS →</span>
                   </div>
                 </div>
               </motion.div>
@@ -238,7 +237,7 @@ export const Projects: React.FC = () => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={() => setActiveModalProject(null)}
-            className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 md:p-10 bg-black/85 backdrop-blur-xl overflow-y-auto"
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 md:p-10 bg-[#123C32]/60 backdrop-blur-md overflow-y-auto"
           >
             <motion.div
               initial={{ scale: 0.94, y: 20, opacity: 0 }}
@@ -246,28 +245,28 @@ export const Projects: React.FC = () => {
               exit={{ scale: 0.94, y: 20, opacity: 0 }}
               transition={{ duration: 0.3, ease: 'easeOut' }}
               onClick={(e) => e.stopPropagation()}
-              className="relative w-full max-w-4xl max-h-[90vh] bg-[#09090b] border border-zinc-800 rounded-2xl shadow-2xl overflow-y-auto corner-border flex flex-col p-6 sm:p-10 space-y-8"
+              className="relative w-full max-w-4xl max-h-[90vh] bg-white border border-[#DDE1DC] rounded-2xl shadow-2xl overflow-y-auto corner-border-light flex flex-col p-6 sm:p-10 space-y-8"
             >
               {/* Modal Header */}
-              <div className="flex items-start justify-between pb-6 border-b border-zinc-800/80 gap-4">
+              <div className="flex items-start justify-between pb-6 border-b border-[#DDE1DC] gap-4">
                 <div className="space-y-2">
-                  <div className="flex items-center gap-2 font-mono text-xs text-zinc-400">
-                    <span className="px-2.5 py-0.5 rounded bg-zinc-900 border border-zinc-700 font-bold text-white">
+                  <div className="flex items-center gap-2 font-mono text-xs text-[#5F806F]">
+                    <span className="px-2.5 py-0.5 rounded bg-[#DCE8E1] border border-[#174C3C]/20 font-bold text-[#123C32]">
                       PROJECT {activeModalProject.number}
                     </span>
                     <span>// {activeModalProject.category}</span>
                   </div>
-                  <h3 className="font-sans font-black text-2xl sm:text-4xl text-white tracking-tight">
+                  <h3 className="font-sans font-black text-2xl sm:text-4xl text-[#17201D] tracking-tight">
                     {activeModalProject.displayName || activeModalProject.title}
                   </h3>
-                  <p className="font-mono text-xs sm:text-sm text-zinc-400">
+                  <p className="font-mono text-xs sm:text-sm text-[#59635E]">
                     {activeModalProject.tagline}
                   </p>
                 </div>
 
                 <button
                   onClick={() => setActiveModalProject(null)}
-                  className="p-2 rounded-lg bg-zinc-900 border border-zinc-800 hover:border-zinc-600 text-zinc-400 hover:text-white transition-all shrink-0"
+                  className="p-2 rounded-lg bg-[#F6F5F0] border border-[#DDE1DC] hover:border-[#174C3C] text-[#59635E] hover:text-[#17201D] transition-all shrink-0"
                   aria-label="Close modal"
                 >
                   <X size={20} />
@@ -276,49 +275,49 @@ export const Projects: React.FC = () => {
 
               {/* Overview Section */}
               <div className="space-y-3">
-                <div className="font-mono text-xs text-zinc-500 uppercase tracking-wider flex items-center gap-2">
-                  <Cpu size={14} className="text-zinc-400" />
+                <div className="font-mono text-xs text-[#174C3C] uppercase tracking-wider flex items-center gap-2 font-semibold">
+                  <Cpu size={14} className="text-[#174C3C]" />
                   <span>OVERVIEW & SYSTEM ARCHITECTURE</span>
                 </div>
-                <p className="text-zinc-300 text-sm sm:text-base leading-relaxed">
+                <p className="text-[#59635E] text-sm sm:text-base leading-relaxed">
                   {activeModalProject.extendedDescription || activeModalProject.description}
                 </p>
               </div>
 
-              {/* Dedicated Agentic Pipeline Section (for SPAMSENSE AI or projects with agents) */}
+              {/* Dedicated Agentic Pipeline Section */}
               {activeModalProject.agents && activeModalProject.agents.length > 0 && (
                 <div className="space-y-6 pt-2">
-                  <div className="font-mono text-xs text-white uppercase tracking-wider flex items-center justify-between pb-2 border-b border-zinc-800">
+                  <div className="font-mono text-xs text-[#123C32] uppercase tracking-wider flex items-center justify-between pb-2 border-b border-[#DDE1DC] font-bold">
                     <span className="flex items-center gap-2">
-                      <Layers size={14} className="text-emerald-400" />
+                      <Layers size={14} className="text-[#174C3C]" />
                       <span>AGENTIC PIPELINE ARCHITECTURE (8 AGENTS)</span>
                     </span>
-                    <span className="text-zinc-500 font-mono text-[10px]">AUTONOMOUS MULTI-AGENT EXECUTION</span>
+                    <span className="text-[#59635E] font-mono text-[10px]">AUTONOMOUS MULTI-AGENT EXECUTION</span>
                   </div>
 
                   {/* Flow Diagram Summary */}
-                  <div className="p-4 rounded-xl bg-zinc-950 border border-zinc-800 font-mono text-[11px] space-y-2">
-                    <div className="text-zinc-500 text-[10px] uppercase">PIPELINE EXECUTION FLOW:</div>
-                    <div className="flex flex-wrap items-center gap-2 text-zinc-300">
-                      <span className="px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800">GMAIL</span>
-                      <span className="text-zinc-600">→</span>
-                      <span className="px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800">EMAIL FETCH</span>
-                      <span className="text-zinc-600">→</span>
-                      <span className="px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800">CONTENT ANALYSIS</span>
-                      <span className="text-zinc-600">→</span>
-                      <span className="px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800">SPAM ANALYSIS</span>
-                      <span className="text-zinc-600">→</span>
-                      <span className="px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800">PHISHING ANALYSIS</span>
-                      <span className="text-zinc-600">→</span>
-                      <span className="px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800">SENDER REPUTATION</span>
-                      <span className="text-zinc-600">→</span>
-                      <span className="px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800">MEMORY</span>
-                      <span className="text-zinc-600">→</span>
-                      <span className="px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800 text-white font-bold">FINAL DECISION</span>
-                      <span className="text-zinc-600">→</span>
-                      <span className="px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800">USER FEEDBACK</span>
-                      <span className="text-zinc-600">→</span>
-                      <span className="px-2 py-0.5 rounded bg-zinc-900 border border-zinc-700 text-emerald-400 font-bold">LEARNING</span>
+                  <div className="p-4 rounded-xl bg-[#F6F5F0] border border-[#DDE1DC] font-mono text-[11px] space-y-2">
+                    <div className="text-[#59635E] text-[10px] uppercase font-semibold">PIPELINE EXECUTION FLOW:</div>
+                    <div className="flex flex-wrap items-center gap-2 text-[#17201D]">
+                      <span className="px-2 py-0.5 rounded bg-white border border-[#DDE1DC]">GMAIL</span>
+                      <span className="text-[#8A938E]">→</span>
+                      <span className="px-2 py-0.5 rounded bg-white border border-[#DDE1DC]">EMAIL FETCH</span>
+                      <span className="text-[#8A938E]">→</span>
+                      <span className="px-2 py-0.5 rounded bg-white border border-[#DDE1DC]">CONTENT ANALYSIS</span>
+                      <span className="text-[#8A938E]">→</span>
+                      <span className="px-2 py-0.5 rounded bg-white border border-[#DDE1DC]">SPAM ANALYSIS</span>
+                      <span className="text-[#8A938E]">→</span>
+                      <span className="px-2 py-0.5 rounded bg-white border border-[#DDE1DC]">PHISHING ANALYSIS</span>
+                      <span className="text-[#8A938E]">→</span>
+                      <span className="px-2 py-0.5 rounded bg-white border border-[#DDE1DC]">SENDER REPUTATION</span>
+                      <span className="text-[#8A938E]">→</span>
+                      <span className="px-2 py-0.5 rounded bg-white border border-[#DDE1DC]">MEMORY</span>
+                      <span className="text-[#8A938E]">→</span>
+                      <span className="px-2 py-0.5 rounded bg-[#DCE8E1] border border-[#174C3C]/30 text-[#123C32] font-bold">FINAL DECISION</span>
+                      <span className="text-[#8A938E]">→</span>
+                      <span className="px-2 py-0.5 rounded bg-white border border-[#DDE1DC]">USER FEEDBACK</span>
+                      <span className="text-[#8A938E]">→</span>
+                      <span className="px-2 py-0.5 rounded bg-[#174C3C] text-white font-bold">LEARNING</span>
                     </div>
                   </div>
 
@@ -327,19 +326,19 @@ export const Projects: React.FC = () => {
                     {activeModalProject.agents.map((agent, aIdx) => (
                       <div
                         key={agent.number}
-                        className="p-4 rounded-xl bg-zinc-950 border border-zinc-800/90 hover:border-zinc-600 transition-colors flex flex-col justify-between space-y-2 relative"
+                        className="p-4 rounded-xl bg-[#F6F5F0] border border-[#DDE1DC] hover:border-[#174C3C] transition-colors flex flex-col justify-between space-y-2 relative"
                       >
                         <div>
-                          <div className="flex items-center justify-between font-mono text-xs text-zinc-500 mb-1">
-                            <span className="font-bold text-white px-1.5 py-0.5 rounded bg-zinc-900">
+                          <div className="flex items-center justify-between font-mono text-xs text-[#59635E] mb-1">
+                            <span className="font-bold text-[#123C32] px-1.5 py-0.5 rounded bg-white border border-[#DDE1DC]">
                               {agent.number}
                             </span>
-                            <span className="text-[10px] text-zinc-500">STEP {aIdx + 1}</span>
+                            <span className="text-[10px] text-[#8A938E]">STEP {aIdx + 1}</span>
                           </div>
-                          <h4 className="font-mono text-xs font-bold text-zinc-200 mt-2">
+                          <h4 className="font-mono text-xs font-bold text-[#17201D] mt-2">
                             {agent.name}
                           </h4>
-                          <p className="text-xs text-zinc-400 leading-relaxed font-sans mt-1">
+                          <p className="text-xs text-[#59635E] leading-relaxed font-sans mt-1">
                             {agent.responsibility}
                           </p>
                         </div>
@@ -352,17 +351,17 @@ export const Projects: React.FC = () => {
               {/* Key Capabilities */}
               {activeModalProject.keyCapabilities && (
                 <div className="space-y-3 pt-2">
-                  <div className="font-mono text-xs text-zinc-500 uppercase tracking-wider flex items-center gap-2">
-                    <ShieldCheck size={14} className="text-zinc-400" />
+                  <div className="font-mono text-xs text-[#174C3C] uppercase tracking-wider flex items-center gap-2 font-semibold">
+                    <ShieldCheck size={14} className="text-[#174C3C]" />
                     <span>KEY CAPABILITIES</span>
                   </div>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                     {activeModalProject.keyCapabilities.map((cap, cIdx) => (
                       <div
                         key={cIdx}
-                        className="flex items-start gap-2.5 p-3 rounded-lg bg-zinc-950 border border-zinc-800/80 text-xs text-zinc-300 font-sans"
+                        className="flex items-start gap-2.5 p-3 rounded-lg bg-[#F6F5F0] border border-[#DDE1DC] text-xs text-[#17201D] font-sans"
                       >
-                        <CheckCircle2 size={14} className="text-emerald-400 mt-0.5 shrink-0" />
+                        <CheckCircle2 size={14} className="text-[#174C3C] mt-0.5 shrink-0" />
                         <span>{cap}</span>
                       </div>
                     ))}
@@ -372,15 +371,15 @@ export const Projects: React.FC = () => {
 
               {/* Complete Technology Stack */}
               <div className="space-y-3 pt-2">
-                <div className="font-mono text-xs text-zinc-500 uppercase tracking-wider flex items-center gap-2">
-                  <Binary size={14} className="text-zinc-400" />
+                <div className="font-mono text-xs text-[#174C3C] uppercase tracking-wider flex items-center gap-2 font-semibold">
+                  <Binary size={14} className="text-[#174C3C]" />
                   <span>COMPLETE TECHNOLOGY STACK</span>
                 </div>
                 <div className="flex flex-wrap gap-2">
                   {(activeModalProject.allTechnologies || activeModalProject.technologies).map((tech) => (
                     <span
                       key={tech}
-                      className="px-3 py-1.5 rounded-lg bg-zinc-950 border border-zinc-800 text-xs font-mono text-zinc-300"
+                      className="px-3 py-1.5 rounded-lg bg-[#ECEBE5] border border-[#DDE1DC] text-xs font-mono text-[#315C50] font-medium"
                     >
                       {tech}
                     </span>
@@ -389,8 +388,8 @@ export const Projects: React.FC = () => {
               </div>
 
               {/* Modal Footer Actions */}
-              <div className="pt-6 border-t border-zinc-800/80 flex flex-wrap items-center justify-between gap-4">
-                <div className="font-mono text-xs text-zinc-500">
+              <div className="pt-6 border-t border-[#DDE1DC] flex flex-wrap items-center justify-between gap-4">
+                <div className="font-mono text-xs text-[#59635E]">
                   REPOSITORY STATUS: PUBLIC
                 </div>
 
@@ -400,7 +399,7 @@ export const Projects: React.FC = () => {
                       href={activeModalProject.githubUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-white text-black font-mono font-bold text-xs tracking-wider uppercase hover:bg-zinc-200 transition-all shadow-md"
+                      className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-[#174C3C] text-white font-mono font-bold text-xs tracking-wider uppercase hover:bg-[#123C32] transition-all shadow-md"
                     >
                       <GithubIcon size={15} />
                       <span>VIEW ON GITHUB →</span>
@@ -408,7 +407,7 @@ export const Projects: React.FC = () => {
                   )}
                   <button
                     onClick={() => setActiveModalProject(null)}
-                    className="px-4 py-2.5 rounded-lg bg-zinc-900 border border-zinc-800 hover:border-zinc-600 text-xs font-mono text-zinc-300 transition-colors"
+                    className="px-4 py-2.5 rounded-lg bg-[#F6F5F0] border border-[#DDE1DC] hover:border-[#174C3C] text-xs font-mono text-[#17201D] transition-colors"
                   >
                     CLOSE
                   </button>

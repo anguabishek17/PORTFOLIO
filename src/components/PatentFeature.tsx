@@ -5,33 +5,30 @@ import { PATENT_DETAILS } from '../data/portfolioData';
 
 export const PatentFeature: React.FC = () => {
   return (
-    <section id="patent" className="py-24 relative z-10 border-b border-zinc-900 overflow-hidden">
-      {/* Ambient background glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] bg-white/[0.02] blur-[150px] rounded-full pointer-events-none" />
-
+    <section id="patent" className="py-24 relative z-10 border-b border-[#DDE1DC] bg-[#F6F5F0] overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         
         {/* Eyebrow / Category */}
-        <div className="flex items-center gap-2 font-mono text-xs text-zinc-500 mb-4 uppercase tracking-widest">
-          <Satellite size={14} className="text-white animate-pulse" />
+        <div className="flex items-center gap-2 font-mono text-xs text-[#174C3C] mb-4 uppercase tracking-widest font-semibold">
+          <Satellite size={14} className="text-[#174C3C] animate-pulse" />
           <span>04 // INTELLECTUAL PROPERTY & PUBLISHED RESEARCH</span>
         </div>
 
         {/* Section Heading */}
-        <h2 className="font-sans font-black text-3xl sm:text-5xl lg:text-6xl text-white tracking-tight uppercase max-w-4xl mb-12 leading-tight">
+        <h2 className="font-sans font-black text-3xl sm:text-5xl lg:text-6xl text-[#17201D] tracking-tight uppercase max-w-4xl mb-12 leading-tight">
           PATENTED / <br className="hidden sm:block" />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-zinc-300 to-zinc-600">
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#17201D] via-[#174C3C] to-[#5F806F]">
             PUBLISHED RESEARCH
           </span>
         </h2>
 
-        {/* Main Patent Showcase Box */}
+        {/* Main Patent Showcase Box in Editorial Dark Green #123C32 */}
         <motion.div
           initial={{ opacity: 0, y: 25 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.7 }}
-          className="relative rounded-3xl bg-zinc-950 border border-zinc-800 p-8 sm:p-12 corner-border shadow-2xl overflow-hidden"
+          className="relative rounded-3xl bg-[#123C32] border border-[#174C3C] p-8 sm:p-12 shadow-2xl overflow-hidden text-white"
         >
           {/* Background Grid & Radar Graphic */}
           <div className="absolute top-0 right-0 w-96 h-96 opacity-10 pointer-events-none">
@@ -40,15 +37,15 @@ export const PatentFeature: React.FC = () => {
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
             
-            {/* Left 7 Cols: Patent Info */}
+            {/* Left 8 Cols: Patent Info */}
             <div className="lg:col-span-8 space-y-6">
               
               {/* Badge Bar */}
               <div className="flex flex-wrap items-center gap-3">
-                <span className="px-3 py-1 rounded-full bg-white text-black font-mono text-xs font-bold uppercase tracking-wider">
+                <span className="px-3 py-1 rounded-full bg-white text-[#123C32] font-mono text-xs font-bold uppercase tracking-wider shadow-sm">
                   {PATENT_DETAILS.status}
                 </span>
-                <span className="font-mono text-xs text-zinc-400">
+                <span className="font-mono text-xs text-[#DCE8E1]">
                   {PATENT_DETAILS.field}
                 </span>
               </div>
@@ -59,14 +56,14 @@ export const PatentFeature: React.FC = () => {
               </h3>
 
               {/* Description */}
-              <p className="text-zinc-300 text-base sm:text-lg leading-relaxed">
+              <p className="text-[#DCE8E1] text-base sm:text-lg leading-relaxed">
                 {PATENT_DETAILS.description}
               </p>
 
               {/* Key Technical Highlights */}
               <div className="pt-4 space-y-3">
-                <div className="font-mono text-xs text-zinc-400 uppercase tracking-wider flex items-center gap-2">
-                  <Cpu size={14} className="text-zinc-300" />
+                <div className="font-mono text-xs text-[#DCE8E1] uppercase tracking-wider flex items-center gap-2 font-semibold">
+                  <Cpu size={14} className="text-white" />
                   <span>Research Pillars & Innovation Mechanisms:</span>
                 </div>
                 
@@ -74,11 +71,11 @@ export const PatentFeature: React.FC = () => {
                   {PATENT_DETAILS.highlights.map((item, idx) => (
                     <div
                       key={idx}
-                      className="p-4 rounded-xl bg-zinc-900/60 border border-zinc-800/80 hover:border-zinc-700 transition-colors"
+                      className="p-4 rounded-xl bg-[#174C3C]/60 border border-[#5F806F]/40"
                     >
                       <div className="flex items-start gap-2.5">
                         <span className="w-1.5 h-1.5 rounded-full bg-white mt-1.5 shrink-0" />
-                        <span className="text-xs text-zinc-300 font-sans leading-relaxed">
+                        <span className="text-xs text-[#DCE8E1] font-sans leading-relaxed">
                           {item}
                         </span>
                       </div>
@@ -90,41 +87,41 @@ export const PatentFeature: React.FC = () => {
             </div>
 
             {/* Right 4 Cols: Technical Telemetry Box */}
-            <div className="lg:col-span-4 p-6 rounded-2xl bg-zinc-900/40 border border-zinc-800 space-y-4 font-mono text-xs">
-              <div className="pb-3 border-b border-zinc-800 flex justify-between items-center text-zinc-500">
+            <div className="lg:col-span-4 p-6 rounded-2xl bg-[#174C3C]/40 border border-[#5F806F]/40 space-y-4 font-mono text-xs">
+              <div className="pb-3 border-b border-[#5F806F]/40 flex justify-between items-center text-[#DCE8E1]">
                 <span>SENSOR_FUSION</span>
                 <span className="text-white font-bold">SAR + OPTICAL</span>
               </div>
 
               <div className="space-y-3">
-                <div className="flex justify-between py-1 border-b border-zinc-900 text-zinc-400">
+                <div className="flex justify-between py-1 border-b border-[#5F806F]/30 text-[#DCE8E1]/80">
                   <span>Modality:</span>
                   <span className="text-white">Multi-Temporal SAR</span>
                 </div>
-                <div className="flex justify-between py-1 border-b border-zinc-900 text-zinc-400">
+                <div className="flex justify-between py-1 border-b border-[#5F806F]/30 text-[#DCE8E1]/80">
                   <span>Grounding:</span>
                   <span className="text-white">Spatial Mask Evidence</span>
                 </div>
-                <div className="flex justify-between py-1 border-b border-zinc-900 text-zinc-400">
+                <div className="flex justify-between py-1 border-b border-[#5F806F]/30 text-[#DCE8E1]/80">
                   <span>Interaction:</span>
-                  <span className="text-white">Natural Language Reasoning</span>
+                  <span className="text-white">Natural Language</span>
                 </div>
-                <div className="flex justify-between py-1 border-b border-zinc-900 text-zinc-400">
+                <div className="flex justify-between py-1 border-b border-[#5F806F]/30 text-[#DCE8E1]/80">
                   <span>Origin:</span>
                   <span className="text-white">ECE + AI Innovation</span>
                 </div>
-                <div className="flex justify-between py-1 text-zinc-400">
+                <div className="flex justify-between py-1 text-[#DCE8E1]/80">
                   <span>Geo Anchor:</span>
                   <span className="text-white font-mono">{PATENT_DETAILS.coordinates}</span>
                 </div>
               </div>
 
-              <div className="pt-4 border-t border-zinc-800 flex items-center justify-between text-[11px] text-zinc-500">
+              <div className="pt-4 border-t border-[#5F806F]/40 flex items-center justify-between text-[11px] text-[#DCE8E1]">
                 <span className="flex items-center gap-1.5">
                   <span className="w-2 h-2 rounded-full bg-emerald-400" />
                   AUTHENTICATED RECORD
                 </span>
-                <Navigation size={12} className="text-zinc-400" />
+                <Navigation size={12} className="text-white" />
               </div>
             </div>
 

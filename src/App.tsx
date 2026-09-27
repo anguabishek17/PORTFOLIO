@@ -22,7 +22,7 @@ export const App: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   return (
-    <div className="min-h-screen bg-black text-white relative selection:bg-white selection:text-black">
+    <div className="min-h-screen bg-[#F6F5F0] text-[#17201D] relative selection:bg-[#174C3C] selection:text-white">
       {/* Cinematic AI Engineering Boot Loader */}
       <AnimatePresence mode="wait">
         {isLoading && (

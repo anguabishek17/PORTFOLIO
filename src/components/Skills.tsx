@@ -24,21 +24,21 @@ export const Skills: React.FC = () => {
     : SKILL_CATEGORIES.filter(cat => cat.title.toLowerCase().includes(activeCategory.toLowerCase()));
 
   return (
-    <section id="skills" className="py-24 relative z-10 border-b border-zinc-900">
+    <section id="skills" className="py-24 relative z-10 border-b border-[#DDE1DC] bg-[#F6F5F0]">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 pb-6 border-b border-zinc-900 gap-4">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 pb-6 border-b border-[#DDE1DC] gap-4">
           <div>
-            <div className="flex items-center gap-2 font-mono text-xs text-zinc-500 mb-2 uppercase tracking-widest">
-              <span className="w-1.5 h-1.5 rounded-full bg-white" />
+            <div className="flex items-center gap-2 font-mono text-xs text-[#174C3C] mb-2 uppercase tracking-widest font-semibold">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#174C3C]" />
               <span>02 // ARCHITECTURE & TOOLING</span>
             </div>
-            <h2 className="font-sans font-black text-3xl sm:text-5xl text-white tracking-tight uppercase">
+            <h2 className="font-sans font-black text-3xl sm:text-5xl text-[#17201D] tracking-tight uppercase">
               TECHNICAL STACK
             </h2>
           </div>
-          <p className="font-mono text-xs text-zinc-500 max-w-xs">
+          <p className="font-mono text-xs text-[#59635E] max-w-xs">
             CURATED TECHNOLOGIES FOR HIGH-PERFORMANCE AI & EMBEDDED COMPUTING.
           </p>
         </div>
@@ -49,8 +49,8 @@ export const Skills: React.FC = () => {
             onClick={() => setActiveCategory('ALL')}
             className={`px-3.5 py-1.5 rounded-lg font-mono text-xs font-medium transition-all ${
               activeCategory === 'ALL'
-                ? 'bg-white text-black font-bold shadow-sm'
-                : 'bg-zinc-900/80 text-zinc-400 hover:text-white border border-zinc-800'
+                ? 'bg-[#174C3C] text-white font-bold shadow-sm'
+                : 'bg-white text-[#59635E] hover:text-[#174C3C] border border-[#DDE1DC]'
             }`}
           >
             ALL CATEGORIES
@@ -61,8 +61,8 @@ export const Skills: React.FC = () => {
               onClick={() => setActiveCategory(cat.title)}
               className={`px-3.5 py-1.5 rounded-lg font-mono text-xs font-medium transition-all ${
                 activeCategory === cat.title
-                  ? 'bg-white text-black font-bold shadow-sm'
-                  : 'bg-zinc-900/80 text-zinc-400 hover:text-white border border-zinc-800'
+                  ? 'bg-[#174C3C] text-white font-bold shadow-sm'
+                  : 'bg-white text-[#59635E] hover:text-[#174C3C] border border-[#DDE1DC]'
               }`}
             >
               {cat.title}
@@ -81,25 +81,25 @@ export const Skills: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.1 }}
                 transition={{ duration: 0.5, delay: catIdx * 0.08 }}
-                className="p-6 rounded-2xl bg-zinc-950/70 border border-zinc-800/90 hover:border-zinc-700 transition-all duration-300 flex flex-col justify-between group"
+                className="p-6 rounded-2xl bg-white border border-[#DDE1DC] hover:border-[#174C3C] transition-all duration-300 flex flex-col justify-between shadow-sm group"
               >
                 <div>
                   {/* Category Header */}
-                  <div className="flex items-center justify-between pb-4 mb-4 border-b border-zinc-900">
+                  <div className="flex items-center justify-between pb-4 mb-4 border-b border-[#DDE1DC]">
                     <div className="flex items-center gap-2.5">
-                      <div className="p-2 rounded-lg bg-zinc-900 border border-zinc-800 text-zinc-300 group-hover:text-white group-hover:border-zinc-600 transition-colors">
+                      <div className="p-2 rounded-lg bg-[#F6F5F0] border border-[#DDE1DC] text-[#174C3C] group-hover:bg-[#DCE8E1] transition-colors">
                         <Icon size={16} />
                       </div>
-                      <h3 className="font-mono text-xs font-bold tracking-wider text-white">
+                      <h3 className="font-mono text-xs font-bold tracking-wider text-[#123C32]">
                         {category.title}
                       </h3>
                     </div>
-                    <span className="font-mono text-[10px] text-zinc-600">
+                    <span className="font-mono text-[10px] text-[#8A938E]">
                       {category.skills.length} MODULES
                     </span>
                   </div>
 
-                  <p className="text-xs text-zinc-400 mb-6 font-sans">
+                  <p className="text-xs text-[#59635E] mb-6 font-sans leading-relaxed">
                     {category.description}
                   </p>
 
@@ -110,20 +110,20 @@ export const Skills: React.FC = () => {
                         key={skill.name}
                         className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-mono transition-all ${
                           skill.highlight
-                            ? 'bg-zinc-900 border border-zinc-700/80 text-zinc-100 hover:border-white hover:text-white'
-                            : 'bg-zinc-950 border border-zinc-800/70 text-zinc-400 hover:text-zinc-200'
+                            ? 'bg-[#ECEBE5] border border-[#DDE1DC] text-[#174C3C] font-semibold hover:border-[#174C3C]'
+                            : 'bg-[#F6F5F0] border border-[#DDE1DC]/80 text-[#59635E]'
                         }`}
                       >
-                        <span className={`w-1 h-1 rounded-full ${skill.highlight ? 'bg-emerald-400' : 'bg-zinc-600'}`} />
+                        <span className={`w-1.5 h-1.5 rounded-full ${skill.highlight ? 'bg-[#174C3C]' : 'bg-[#8A938E]'}`} />
                         <span>{skill.name}</span>
                       </div>
                     ))}
                   </div>
                 </div>
 
-                <div className="mt-6 pt-4 border-t border-zinc-900/80 flex items-center justify-between font-mono text-[10px] text-zinc-600">
+                <div className="mt-6 pt-4 border-t border-[#DDE1DC] flex items-center justify-between font-mono text-[10px] text-[#8A938E]">
                   <span>PRODUCTION READY</span>
-                  <ChevronRight size={12} className="group-hover:translate-x-1 transition-transform text-zinc-500" />
+                  <ChevronRight size={12} className="group-hover:translate-x-1 transition-transform text-[#174C3C]" />
                 </div>
               </motion.div>
             );
@@ -136,13 +136,13 @@ export const Skills: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="mt-12 p-5 rounded-xl bg-zinc-950 border border-zinc-800/80 flex flex-col sm:flex-row items-center justify-between gap-4 font-mono text-xs"
+          className="mt-12 p-5 rounded-xl bg-white border border-[#DDE1DC] flex flex-col sm:flex-row items-center justify-between gap-4 font-mono text-xs shadow-sm"
         >
-          <div className="flex items-center gap-3 text-zinc-300">
-            <Sparkles size={16} className="text-zinc-400 shrink-0" />
+          <div className="flex items-center gap-3 text-[#123C32]">
+            <Sparkles size={16} className="text-[#174C3C] shrink-0" />
             <span>CORE PHILOSOPHY: Zero fake metrics. Built on verified code, rigorous math, and reproducible architectures.</span>
           </div>
-          <div className="text-zinc-500 text-[11px] shrink-0">
+          <div className="text-[#59635E] text-[11px] shrink-0 font-semibold">
             ENGINEERING &gt; BUZZWORDS
           </div>
         </motion.div>
