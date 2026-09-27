@@ -79,8 +79,54 @@ export const PROJECTS: Project[] = [
     ]
   },
   {
-    id: 'semiconductor-inspection',
+    id: 'spamsense-ai',
     number: '03',
+    title: 'SPAMSENSE AI',
+    displayName: 'SPAMSENSE AI — Agentic AI-Based Spam Mail Detection System',
+    tagline: 'Multi-Agent Autonomous Email Security & Threat Intelligence',
+    description: 'Multi-agent AI pipeline for adaptive spam, phishing, and sender-reputation analysis.',
+    extendedDescription: 'SPAMSENSE AI is an agentic email security system designed to autonomously analyze incoming emails through a multi-agent pipeline. The system combines machine learning, NLP, Gmail API integration, and LLM-powered reasoning to evaluate email content and context, identify spam and phishing patterns, assess sender reputation, maintain memory of trusted and suspicious senders, and continuously improve its decisions through user feedback.',
+    category: 'AI / ML',
+    allCategories: ['AI / ML', 'Agentic AI', 'NLP', 'Cybersecurity', 'Email Security'],
+    featured: false,
+    technologies: ['Python', 'LangChain', 'Scikit-learn', 'NLTK', 'Gmail API', 'LLM'],
+    allTechnologies: [
+      'Python 3.11', 'Scikit-learn', 'NLTK', 'Google Gmail API', 
+      'OAuth 2.0', 'Pandas', 'NumPy', 'LangChain', 'LLM APIs', 'Git', 'GitHub'
+    ],
+    githubUrl: 'https://github.com/anguabishek17/SPAMAI.git',
+    metrics: ['8-Agent Pipeline', 'Sender Memory', 'Gmail API OAuth', 'Feedback Learning'],
+    architectureHighlights: [
+      'Multi-agent orchestration with LangChain for step-wise threat verification',
+      'Dynamic memory agent storing trusted and suspicious sender reputation vectors',
+      'Autonomous feedback loop refining decision thresholds on user triage'
+    ],
+    agents: [
+      { number: '01', name: 'EMAIL FETCH AGENT', responsibility: 'Securely fetches emails from Gmail.' },
+      { number: '02', name: 'CONTENT AGENT', responsibility: 'Classifies email text using machine learning.' },
+      { number: '03', name: 'SPAM TYPE AGENT', responsibility: 'Identifies the type of spam.' },
+      { number: '04', name: 'PHISHING AGENT', responsibility: 'Detects malicious links and phishing intent.' },
+      { number: '05', name: 'SENDER AGENT', responsibility: 'Evaluates sender reputation.' },
+      { number: '06', name: 'MEMORY AGENT', responsibility: 'Stores trusted and suspicious senders.' },
+      { number: '07', name: 'DECISION AGENT', responsibility: 'Makes the final SPAM / HAM decision.' },
+      { number: '08', name: 'LEARNING AGENT', responsibility: 'Learns from user feedback.' }
+    ],
+    keyCapabilities: [
+      'Automated Gmail email retrieval',
+      'Multi-agent email analysis',
+      'Machine-learning-based content classification',
+      'Spam-type identification',
+      'Phishing detection',
+      'Malicious-link analysis',
+      'Sender reputation evaluation',
+      'Trusted/suspicious sender memory',
+      'Final SPAM/HAM decision',
+      'Feedback-driven learning'
+    ]
+  },
+  {
+    id: 'semiconductor-inspection',
+    number: '04',
     title: 'AI-BASED SEMICONDUCTOR INSPECTION IMAGE RESTORATION',
     displayName: 'Semiconductor Inspection Image Restoration',
     tagline: 'Deep U-Net Architecture for Grayscale Defect Analysis',
@@ -97,7 +143,7 @@ export const PROJECTS: Project[] = [
   },
   {
     id: 'log-anomaly-explainer',
-    number: '04',
+    number: '05',
     title: 'AI-POWERED ROOT CAUSE ANALYSIS FOR LOG MONITORING',
     displayName: 'LOG ANOMALY EXPLAINER',
     tagline: 'RAG & Vector-Driven Observability Platform',
@@ -118,7 +164,7 @@ export const PROJECTS: Project[] = [
   },
   {
     id: 'maitri',
-    number: '05',
+    number: '06',
     title: 'MAITRI',
     displayName: 'MAITRI — Multimodal Astronaut Wellness Monitoring System',
     tagline: 'Multimodal Psychological & Operational Support for Deep Space Missions',
@@ -140,7 +186,7 @@ export const PROJECTS: Project[] = [
   },
   {
     id: 'smart-care',
-    number: '06',
+    number: '07',
     title: 'SMART CARE',
     displayName: 'SMART CARE — Hostel Management System',
     tagline: 'Comprehensive Campus Hostel Digital Management Architecture',
@@ -157,7 +203,7 @@ export const PROJECTS: Project[] = [
   },
   {
     id: 'lora-sensor-network',
-    number: '07',
+    number: '08',
     title: 'LoRa-Based Industrial Sensor Network',
     displayName: 'LoRa-Based Industrial Sensor Network',
     tagline: 'Long-Range RF Telemetry & Embedded Sensing Architecture',

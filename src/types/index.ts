@@ -1,3 +1,10 @@
+export interface AgentNode {
+  number: string;
+  name: string;
+  responsibility: string;
+  iconName?: string;
+}
+
 export interface Project {
   id: string;
   number: string;
@@ -5,13 +12,18 @@ export interface Project {
   displayName?: string;
   tagline: string;
   description: string;
+  extendedDescription?: string;
   category: 'AI / ML' | 'Full-Stack' | 'Embedded / ECE' | 'Computer Vision' | 'System Architecture';
+  allCategories?: string[];
   featured: boolean;
   technologies: string[];
+  allTechnologies?: string[];
   githubUrl?: string;
   liveUrl?: string;
   metrics?: string[];
   architectureHighlights?: string[];
+  agents?: AgentNode[];
+  keyCapabilities?: string[];
 }
 
 export interface Experience {
